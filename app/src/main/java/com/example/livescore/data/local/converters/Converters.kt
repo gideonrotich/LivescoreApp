@@ -13,25 +13,25 @@ class Converters(
 
     //Away team converter
     @TypeConverter
-    fun fromTest(str: AwayTeam): String {
+    fun fromTest(str: AwayTeam): String? {
         return Gson().toJson(str)
     }
 
     @TypeConverter
-    fun toTest(str: String): AwayTeam {
+    fun toTest(str: String?): AwayTeam {
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
 
     //Group converter
     @TypeConverter
-    fun fromGroup(str: Group): String {
-        return Gson().toJson(str)
+    fun fromGroup(strone: Group): String {
+        return Gson().toJson(strone)
     }
 
     @TypeConverter
-    fun toGroup(str: String): Group {
-        return Gson().fromJson(str, object : TypeToken<String>() {}.type)
+    fun toGroup(strtwo: String): Group {
+        return Gson().fromJson(strtwo, object : TypeToken<String>() {}.type)
     }
 
     //home team

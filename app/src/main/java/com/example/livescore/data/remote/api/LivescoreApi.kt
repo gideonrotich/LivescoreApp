@@ -10,6 +10,6 @@ interface LivescoreApi {
     suspend fun getMatches(
         @Query("apikey") apikey: String = Constants.API_KEY,
         @Query("season_id") seasonId: String = Constants.PL_ID_MATCHES,
-        @Query("date_from") dateFrom: String = "2022-09-18"
+        @Query("date_from") dateFrom: String = "2022-08-05"
     ):MatchesResponseDto
 }

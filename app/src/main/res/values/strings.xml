@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Livescore</string>
+    <string name="text_home">home</string>
+    <string name="text_details">forbesdetails</string>
 </resources>
