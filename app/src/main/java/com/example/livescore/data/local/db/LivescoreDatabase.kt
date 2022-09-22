@@ -11,7 +11,7 @@ import com.example.livescore.data.local.entity.MatchesEntity
 @TypeConverters(Converters::class)
 @Database(
     entities = [MatchesEntity::class],
-    version = 16,
+    version = 20,
     exportSchema = false
 )
 abstract class LivescoreDatabase:RoomDatabase() {

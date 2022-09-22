@@ -25,12 +25,12 @@ class Converters(
 
     //Group converter
     @TypeConverter
-    fun fromGroup(strone: Group): String {
+    fun fromGroup(strone: Group): String? {
         return Gson().toJson(strone)
     }
 
     @TypeConverter
-    fun toGroup(strtwo: String): Group {
+    fun toGroup(strtwo: String?): Group {
         return Gson().fromJson(strtwo, object : TypeToken<String>() {}.type)
     }
 

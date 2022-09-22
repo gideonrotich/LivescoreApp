@@ -16,5 +16,5 @@ data class Data(
     val stats: Stats,
     val status: String,
     val status_code: Int,
-    val venue: Venue
+    val venue: Venue?
 )
