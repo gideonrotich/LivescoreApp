@@ -24,8 +24,8 @@ class MatchesRepositoryImpl(
 
         try {
             val apiResponse = livescoreApi.getMatches()
-            matchesDao.deleteMatches()
-            matchesDao.insertMatches(apiResponse.data.map { it.toEntity() })
+//            matchesDao.deleteMatches()
+//            matchesDao.insertMatches(apiResponse.data.map { it.toEntity() })
         } catch (exception: IOException) {
             emit(
                 Resource.Error(
@@ -41,7 +41,7 @@ class MatchesRepositoryImpl(
                 )
             )
         }
-        val allMatches = matchesDao.getMatches().map { it.toDomain() }
+        val allMatches = livescoreApi.getMatches().data.map { it.toEntity() }
         emit(Resource.Success(allMatches))
     }
 }

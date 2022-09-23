@@ -89,7 +89,8 @@ dependencies {
 
     implementation 'androidx.palette:palette:1.0.0'
 
-    implementation"io.coil-kt:coil-compose:1.4.0"
+    implementation"io.coil-kt:coil-compose:2.1.0"
+    implementation("io.coil-kt:coil-gif:2.1.0")
 
     implementation "androidx.room:room-runtime:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"

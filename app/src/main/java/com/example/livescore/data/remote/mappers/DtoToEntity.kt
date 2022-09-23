@@ -2,9 +2,10 @@ package com.example.livescore.data.remote.mappers
 
 import com.example.livescore.data.local.entity.MatchesEntity
 import com.example.livescore.data.remote.dto.Data
+import com.example.livescore.domain.models.DataModel
 
-internal fun Data.toEntity():MatchesEntity{
-    return MatchesEntity(
+internal fun Data.toEntity():DataModel{
+    return DataModel(
         this.away_team,
         this.group,
         this.home_team,

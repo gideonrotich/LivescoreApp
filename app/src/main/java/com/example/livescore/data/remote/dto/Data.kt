@@ -2,7 +2,7 @@ package com.example.livescore.data.remote.dto
 
 data class Data(
     val away_team: AwayTeam,
-    val group: Group,
+    val group: Group?,
     val home_team: HomeTeam,
     val league_id: Int,
     val match_id: Int,
