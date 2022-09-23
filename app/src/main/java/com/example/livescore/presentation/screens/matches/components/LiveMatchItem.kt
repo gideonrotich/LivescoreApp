@@ -38,7 +38,7 @@ fun LiveMatchItem(match: DataModel) {
     ) {
         Box(
             modifier = Modifier
-                .height(200.dp)
+                .height(250.dp)
                 .width(300.dp)
         ) {
             Column(modifier = Modifier.fillMaxSize()) {
