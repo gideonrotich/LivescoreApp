@@ -90,7 +90,9 @@ fun MatchesScreen(
 
             LazyColumn(modifier = Modifier.fillMaxWidth()) {
                 items(matchesState.matches) { matches ->
-                    UpcomingMatchesItem(match = matches)
+                    UpcomingMatchesItem(match = matches,onItemClicked = {
+                        navController.navigate(Screen.MatchDetailsScreen.route + "/${matches.match_id}")
+                    })
                 }
             }
 

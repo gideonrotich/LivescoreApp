@@ -1,6 +1,7 @@
 package com.example.livescore.presentation.screens.matches.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -29,22 +30,23 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @Composable
-fun UpcomingMatchesItem(match:DataModel){
+fun UpcomingMatchesItem(match: DataModel, onItemClicked: (match: DataModel) -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(20.dp),
+            .padding(20.dp)
+            .clickable { onItemClicked(match) },
         shape = RoundedCornerShape(10.dp),
         elevation = 5.dp,
         backgroundColor = White
-    ){
-        Box(modifier = Modifier.height(54.dp)){
+    ) {
+        Box(modifier = Modifier.height(54.dp)) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(10.dp, 10.dp, 10.dp, 10.dp)
                     .align(alignment = Alignment.Center),
-            ){
+            ) {
                 Row(modifier = Modifier.align(Alignment.CenterVertically)) {
                     Text(
                         text = "${match.home_team?.name}",
@@ -120,11 +122,11 @@ fun UpcomingMatchesItem(match:DataModel){
 fun getMatchDayAndMonth(date: String): String? {
     val parser = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH)
     val formatter = SimpleDateFormat("d MMM", Locale.ENGLISH)
-    return date.let { it -> parser.parse(it)?.let { formatter.format(it)  } }
+    return date.let { it -> parser.parse(it)?.let { formatter.format(it) } }
 }
 
 fun getMatchTime(date: String): String? {
     val parser = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH)
     val formatter = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
-    return date.let { it -> parser.parse(it)?.let { formatter.format(it)  } }
+    return date.let { it -> parser.parse(it)?.let { formatter.format(it) } }
 }

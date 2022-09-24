@@ -136,7 +136,7 @@ fun LiveMatchItem(match: DataModel,onItemClicked:(match:DataModel) -> Unit) {
                             Row(modifier = Modifier.fillMaxWidth()) {
                                 Spacer(modifier = Modifier.width(3.dp))
                                 Text(
-                                    text = " ${match.stats?.home_score}" + " : ",
+                                    text = " ${match.stats?.home_score}" + " - ",
                                     style = MaterialTheme.typography.h1,
                                     color = Color.White,
                                     fontSize = 52.sp,
