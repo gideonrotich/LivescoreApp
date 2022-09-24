@@ -91,6 +91,7 @@ fun LiveMatchItem(match: DataModel) {
                                 contentScale = ContentScale.Crop
                             )
                         }
+
                         Spacer(modifier = Modifier.height(4.dp))
 
                         Text(
@@ -173,10 +174,7 @@ fun LiveMatchItem(match: DataModel) {
                                     }
                                 }
                             }
-
-
                         }
-
                     }
                     Column(
                         modifier = Modifier
@@ -217,7 +215,6 @@ fun LiveMatchItem(match: DataModel) {
                     }
                 }
             }
-
         }
     }
 }
