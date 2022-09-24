@@ -51,8 +51,8 @@ class MatchesRepositoryImpl(
     override fun getMatchDetails(id: String): Flow<Resource<MatchDetailsModel>>  = flow{
         emit(Resource.Loading())
 
-        val getMatchDetailsFromDb = matchDetailsDao.getMatchDetails(id).toDomain()
-        emit(Resource.Loading(data = getMatchDetailsFromDb))
+//        val getMatchDetailsFromDb = matchDetailsDao.getMatchDetails().toDomain()
+//        emit(Resource.Loading(data = getMatchDetailsFromDb))
 
         try {
             val apiResponse = livescoreApi.getMatchDetails(id)
@@ -61,15 +61,13 @@ class MatchesRepositoryImpl(
         } catch (exception: IOException) {
             emit(
                 Resource.Error(
-                    message = "Connection Lost",
-                    data = getMatchDetailsFromDb
+                    message = "Connection Lost"
                 )
             )
         } catch (exception: HttpException) {
             emit(
                 Resource.Error(
-                    message = exception.message(),
-                    data = getMatchDetailsFromDb
+                    message = exception.message()
                 )
             )
         }

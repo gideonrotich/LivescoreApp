@@ -18,7 +18,7 @@ data class MatchDetailsEntity (
     val match_start_iso: String,
     val match_statistics: List<MatchStatistic>,
     val minute: Int,
-    val referee_id: Any,
+    val referee_id: String,
     val round: Round,
     val season_id: Int,
     val stage: Stage,

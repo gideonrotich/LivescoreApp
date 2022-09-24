@@ -18,6 +18,8 @@ object Constants {
 
     const val GET_MATCH_DETAILS = "api/v1/soccer/matches/{id}"
 
+    const val PARAM_MATCH_ID = "id"
+
     const val GET_STANDINGS = "api/v1/soccer/standings"
 
     val FILTER_CONTENT_LIST = listOf(

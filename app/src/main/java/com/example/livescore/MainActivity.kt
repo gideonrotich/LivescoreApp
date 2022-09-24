@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.livescore.presentation.Screen
+import com.example.livescore.presentation.screens.matchdetails.MatchDetailsScreen
 import com.example.livescore.presentation.screens.matches.MatchesScreen
 import com.example.livescore.ui.theme.LivescoreTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,12 +27,17 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
             NavHost(
                 navController = navController,
-                startDestination = Screen.Home.route
+                startDestination = Screen.MatchScreen.route
             ) {
                 composable(
-                    route = Screen.Home.route
+                    route = Screen.MatchScreen.route
                 ) {
                     MatchesScreen(navController)
+                }
+                composable(
+                    route = Screen.MatchDetailsScreen.route + "/{id}"
+                ) {
+                    MatchDetailsScreen()
                 }
 
             }

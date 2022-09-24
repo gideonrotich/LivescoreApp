@@ -20,7 +20,7 @@ import com.example.livescore.R
 
 
 
-sealed class Screen(val route: String, @StringRes val resourceId: Int) {
-    object Home : Screen("home", R.string.text_home)
-    object Details : Screen("details", R.string.text_details)
+sealed class Screen(val route:String){
+    object MatchScreen: Screen("match_screen")
+    object MatchDetailsScreen: Screen("match_details_screen")
 }

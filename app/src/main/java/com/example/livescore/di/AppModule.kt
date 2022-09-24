@@ -56,7 +56,8 @@ object AppModule {
     ):MatchesRepository{
             return MatchesRepositoryImpl(
             livescoreApi = livescoreApi,
-            matchesDao = livescoreDatabase.MatchesDao()
+            matchesDao = livescoreDatabase.MatchesDao(),
+                matchDetailsDao = livescoreDatabase.MatchDetailsDao()
         )
     }
 

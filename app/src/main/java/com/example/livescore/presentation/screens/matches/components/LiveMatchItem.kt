@@ -3,6 +3,7 @@ package com.example.livescore.presentation.screens.matches.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -27,11 +28,12 @@ import com.example.livescore.R
 import com.example.livescore.domain.models.DataModel
 
 @Composable
-fun LiveMatchItem(match: DataModel) {
+fun LiveMatchItem(match: DataModel,onItemClicked:(match:DataModel) -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(20.dp),
+            .padding(20.dp)
+            .clickable { onItemClicked(match) },
         shape = RoundedCornerShape(16.dp),
         elevation = 5.dp,
         backgroundColor = colorResource(id = R.color.purple)

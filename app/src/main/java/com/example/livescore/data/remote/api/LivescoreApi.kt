@@ -22,7 +22,8 @@ interface LivescoreApi {
     //get match details
     @GET(Constants.GET_MATCH_DETAILS)
     suspend fun getMatchDetails(
-        @Path("id")id: String
+        @Path("id")id: String,
+        @Query("apikey") apikey: String = Constants.API_KEY_TWO
     ): MatchDetailsDto
 
 

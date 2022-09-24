@@ -2,10 +2,12 @@ package com.example.livescore.presentation.screens.matchdetails
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.livescore.domain.use_cases.GetMatchDetailsUseCase
 import com.example.livescore.presentation.screens.matches.MatchesListState
+import com.example.livescore.util.Constants
 import com.example.livescore.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -14,12 +16,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MatchDetailsViewModel @Inject constructor(
-    private val getMatchDetailsUseCase: GetMatchDetailsUseCase
+    private val getMatchDetailsUseCase: GetMatchDetailsUseCase,
+    savedStateHandle: SavedStateHandle
 ):ViewModel(){
     private val _state = mutableStateOf(MatchDetailsState())
     val state:State<MatchDetailsState> = _state
 
     //to call get match details
+
+    init {
+        savedStateHandle.get<String>(Constants.PARAM_MATCH_ID)?.let { match ->
+            getMatchDetails(match)
+        }
+    }
 
     private fun getMatchDetails(id:String){
         getMatchDetailsUseCase(id).onEach { result ->

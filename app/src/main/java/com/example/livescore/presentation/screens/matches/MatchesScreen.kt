@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
@@ -32,6 +33,7 @@ import coil.request.ImageRequest
 import coil.size.Size
 import com.example.livescore.R
 import com.example.livescore.presentation.FilterContent
+import com.example.livescore.presentation.Screen
 import com.example.livescore.presentation.screens.matches.components.LiveMatchItem
 import com.example.livescore.presentation.screens.matches.components.MatchesViewModel
 import com.example.livescore.presentation.screens.matches.components.TopBar
@@ -41,7 +43,7 @@ import com.example.livescore.util.gifLoader
 
 @Composable
 fun MatchesScreen(
-    navController: NavHostController,
+    navController: NavController,
     matchesViewModel: MatchesViewModel = hiltViewModel()
 ) {
     val matchesState = matchesViewModel.state.value
@@ -72,7 +74,9 @@ fun MatchesScreen(
             )
             LazyRow(modifier = Modifier.fillMaxWidth()) {
                 items(matchesState.matches) { matches ->
-                    LiveMatchItem(match = matches)
+                    LiveMatchItem(match = matches, onItemClicked = {
+                        navController.navigate(Screen.MatchDetailsScreen.route + "/${matches.match_id}")
+                    })
                 }
             }
             Text(
