@@ -52,7 +52,7 @@ fun MatchDetailsScreen(
     val matchesState = matchdetailsViewModel.state.value
     val context = LocalContext.current
 
-    Column {
+    Column(modifier = Modifier.fillMaxSize()) {
         matchesState.matchdetails?.let { match ->
 
 
@@ -63,226 +63,219 @@ fun MatchDetailsScreen(
                     .background(colorResource(id = com.example.livescore.R.color.purple))
             ) {
 
-                    LazyColumn(modifier = Modifier.fillMaxSize()) {
-                        item {
-                            Column(modifier = Modifier.fillMaxSize()) {
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.SpaceAround,
+                LazyColumn(modifier = Modifier.fillMaxSize()) {
+                    item {
+                        Column(modifier = Modifier.fillMaxSize()) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceAround,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(top = 10.dp)
+                            ) {
+                                Text(
+                                    text = "Premier league",
+                                    fontSize = 22.sp,
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceAround,
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(top = 10.dp)
+                            ) {
+                                Text(
+                                    text = "Week 10",
+                                    fontSize = 18.sp,
+                                    color = Color.LightGray,
+                                )
+                            }
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Row(
+                                modifier = Modifier
+                                    .align(Alignment.CenterHorizontally)
+                                    .fillMaxSize()
+                                    .padding(start = 30.dp)
+                            ) {
+                                Column(
                                     modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(top = 10.dp)
+                                        .width(100.dp)
+                                        .padding(start = 20.dp)
                                 ) {
-                                    Text(
-                                        text = "Premier league",
-                                        fontSize = 22.sp,
-                                        color = Color.White,
-                                        fontWeight = FontWeight.Bold
-                                    )
-                                }
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.SpaceAround,
-                                    modifier = Modifier
-                                        .fillMaxSize()
-                                        .padding(top = 10.dp)
-                                ) {
-                                    Text(
-                                        text = "Week 10",
-                                        fontSize = 18.sp,
-                                        color = Color.LightGray,
-                                    )
-                                }
-                                Spacer(modifier = Modifier.height(10.dp))
-                                Row(
-                                    modifier = Modifier
-                                        .align(Alignment.CenterHorizontally)
-                                        .fillMaxSize().padding(start = 30.dp)
-                                ) {
-                                    Column(
-                                        modifier = Modifier
-                                            .width(100.dp)
-                                            .padding(start = 20.dp)
-                                    ) {
 
-                                        Row {
-                                            Spacer(modifier = Modifier.width(8.dp))
-                                            val image: Painter =
-                                                rememberImagePainter(data = match.home_team?.logo)
-                                            Image(
-                                                modifier = Modifier
-                                                    .height(50.dp)
-                                                    .width(50.dp)
-                                                    .clip(RoundedCornerShape(8.dp)),
-                                                painter = image,
-                                                alignment = Alignment.Center,
-                                                contentDescription = "",
-                                                contentScale = ContentScale.Crop
-                                            )
-                                        }
-
-                                        Spacer(modifier = Modifier.height(4.dp))
-
-                                        Text(
-                                            text = "${match.home_team?.name}",
-                                            style = MaterialTheme.typography.body1,
-                                            color = Color.White,
-                                            fontSize = 15.sp
-                                        )
-                                        Text(
-                                            text = "     Home",
-                                            style = MaterialTheme.typography.body1,
-                                            color = Color.LightGray,
-                                            fontSize = 13.sp,
-                                            textAlign = TextAlign.Center
+                                    Row {
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        val image: Painter =
+                                            rememberImagePainter(data = match.home_team?.logo)
+                                        Image(
+                                            modifier = Modifier
+                                                .height(50.dp)
+                                                .width(50.dp)
+                                                .clip(RoundedCornerShape(8.dp)),
+                                            painter = image,
+                                            alignment = Alignment.Center,
+                                            contentDescription = "",
+                                            contentScale = ContentScale.Crop
                                         )
                                     }
-                                    Box(
-                                        modifier = Modifier
-                                            .width(100.dp)
-                                            .align(alignment = Alignment.CenterVertically)
-                                    ) {
-                                        Row() {
-                                            val imaged: Painter =
-                                                rememberImagePainter(data = com.example.livescore.R.drawable.premier_logo)
 
-                                            Image(
-                                                modifier = Modifier
-                                                    .height(100.dp)
-                                                    .width(80.dp)
-                                                    .clip(RoundedCornerShape(8.dp)),
-                                                painter = imaged,
-                                                alignment = Alignment.Center,
-                                                contentDescription = "",
-                                                contentScale = ContentScale.Crop
+                                    Spacer(modifier = Modifier.height(4.dp))
+
+                                    Text(
+                                        text = "${match.home_team?.name}",
+                                        style = MaterialTheme.typography.body1,
+                                        color = Color.White,
+                                        fontSize = 15.sp
+                                    )
+                                    Text(
+                                        text = "     Home",
+                                        style = MaterialTheme.typography.body1,
+                                        color = Color.LightGray,
+                                        fontSize = 13.sp,
+                                        textAlign = TextAlign.Center
+                                    )
+                                }
+                                Box(
+                                    modifier = Modifier
+                                        .width(100.dp)
+                                        .align(alignment = Alignment.CenterVertically)
+                                ) {
+                                    Row() {
+                                        val imaged: Painter =
+                                            rememberImagePainter(data = com.example.livescore.R.drawable.premier_logo)
+
+                                        Image(
+                                            modifier = Modifier
+                                                .height(100.dp)
+                                                .width(80.dp)
+                                                .clip(RoundedCornerShape(8.dp)),
+                                            painter = imaged,
+                                            alignment = Alignment.Center,
+                                            contentDescription = "",
+                                            contentScale = ContentScale.Crop
+                                        )
+                                    }
+
+                                    Column() {
+
+                                        Row(modifier = Modifier.fillMaxWidth()) {
+                                            Spacer(modifier = Modifier.width(3.dp))
+                                            Text(
+                                                text = " ${match.stats?.ft_score}",
+                                                style = MaterialTheme.typography.h1,
+                                                color = Color.White,
+                                                fontSize = 52.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                modifier = Modifier.padding(top = 10.dp)
                                             )
+
                                         }
 
-                                        Column() {
+                                        Row(
+                                            modifier = Modifier.padding(
+                                                36.dp,
+                                                1.dp,
+                                                1.dp,
+                                                1.dp
+                                            )
+                                        ) {
+                                            Box(
+                                                modifier =
+                                                Modifier
+                                                    .border(
+                                                        width = 1.dp,
+                                                        color = colorResource(id = com.example.livescore.R.color.pink),
+                                                        shape = RoundedCornerShape(16.dp)
+                                                    )
+                                                    .padding(10.dp)
+                                                    .height(16.dp)
 
-                                            Row(modifier = Modifier.fillMaxWidth()) {
-                                                Spacer(modifier = Modifier.width(3.dp))
-                                                Text(
-                                                    text = " ${match.stats?.ft_score}",
-                                                    style = MaterialTheme.typography.h1,
-                                                    color = Color.White,
-                                                    fontSize = 52.sp,
-                                                    fontWeight = FontWeight.Bold,
-                                                    modifier = Modifier.padding(top = 10.dp)
-                                                )
-
-                                            }
-
-                                            Row(
-                                                modifier = Modifier.padding(
-                                                    36.dp,
-                                                    1.dp,
-                                                    1.dp,
-                                                    1.dp
-                                                )
                                             ) {
-                                                Box(
-                                                    modifier =
-                                                    Modifier
-                                                        .border(
-                                                            width = 1.dp,
-                                                            color = colorResource(id = com.example.livescore.R.color.pink),
-                                                            shape = RoundedCornerShape(16.dp)
-                                                        )
-                                                        .padding(10.dp)
-                                                        .height(16.dp)
-
-                                                ) {
-                                                    match.status?.let {
-                                                        Text(
-                                                            text = "FT",
-                                                            color = Color.White,
-                                                            textAlign = TextAlign.Center,
-                                                            style = MaterialTheme.typography.body2
-                                                        )
-                                                    }
+                                                match.status?.let {
+                                                    Text(
+                                                        text = "FT",
+                                                        color = Color.White,
+                                                        textAlign = TextAlign.Center,
+                                                        style = MaterialTheme.typography.body2
+                                                    )
                                                 }
                                             }
                                         }
                                     }
-                                    Column(
-                                        modifier = Modifier
-                                            .width(100.dp)
-                                            .padding(end = 12.dp)
-                                    ) {
-                                        Row() {
-                                            Spacer(modifier = Modifier.width(8.dp))
-                                            val imagetwo: Painter =
-                                                rememberImagePainter(data = match.away_team?.logo)
+                                }
+                                Column(
+                                    modifier = Modifier
+                                        .width(100.dp)
+                                        .padding(end = 12.dp)
+                                ) {
+                                    Row() {
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        val imagetwo: Painter =
+                                            rememberImagePainter(data = match.away_team?.logo)
 
-                                            Image(
-                                                modifier = Modifier
-                                                    .height(50.dp)
-                                                    .width(50.dp)
-                                                    .clip(RoundedCornerShape(8.dp)),
-                                                painter = imagetwo,
-                                                alignment = Alignment.Center,
-                                                contentDescription = "",
-                                                contentScale = ContentScale.Crop
-                                            )
-                                        }
-
-                                        Spacer(modifier = Modifier.height(4.dp))
-                                        Text(
-                                            text = "${match.away_team?.name}",
-                                            style = MaterialTheme.typography.body1,
-                                            color = Color.White,
-                                            fontSize = 15.sp
-                                        )
-                                        Text(
-                                            text = "     Away",
-                                            style = MaterialTheme.typography.body1,
-                                            color = Color.LightGray,
-                                            fontSize = 13.sp,
-                                            textAlign = TextAlign.Center
+                                        Image(
+                                            modifier = Modifier
+                                                .height(50.dp)
+                                                .width(50.dp)
+                                                .clip(RoundedCornerShape(8.dp)),
+                                            painter = imagetwo,
+                                            alignment = Alignment.Center,
+                                            contentDescription = "",
+                                            contentScale = ContentScale.Crop
                                         )
                                     }
+
+                                    Spacer(modifier = Modifier.height(4.dp))
+                                    Text(
+                                        text = "${match.away_team?.name}",
+                                        style = MaterialTheme.typography.body1,
+                                        color = Color.White,
+                                        fontSize = 15.sp
+                                    )
+                                    Text(
+                                        text = "     Away",
+                                        style = MaterialTheme.typography.body1,
+                                        color = Color.LightGray,
+                                        fontSize = 13.sp,
+                                        textAlign = TextAlign.Center
+                                    )
                                 }
                             }
                         }
                     }
+                }
 
 
-                if (matchesState.error.isNotBlank()) {
-                    Text(
-                        text = matchesState.error,
-                        color = MaterialTheme.colors.error,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 20.dp)
-                            .align(Alignment.Center)
-                    )
-                }
-                if (matchesState.isLoading) {
-                    CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-                }
             }
 
             TabScreen(match.match_events!!)
+        }
+
+        if (matchesState.error.isNotBlank()) {
+            Text(
+                text = matchesState.error,
+                color = MaterialTheme.colors.error,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+                    .align(Alignment.CenterHorizontally)
+            )
+        }
+        if (matchesState.isLoading) {
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
         }
     }
 
 }
 
 
-@Composable
-fun Toolbar() {
-    TopAppBar(
-        title = { Text(text = "TabLayout", color = Color.White) },
-        backgroundColor = TabColorOne,
-
-        )
-}
-
 @ExperimentalPagerApi
 @Composable
-fun TabScreen(match:List<MatchEvent>) {
+fun TabScreen(match: List<MatchEvent>) {
     val pagerState = rememberPagerState(pageCount = 4)
 
     Column(
@@ -290,7 +283,7 @@ fun TabScreen(match:List<MatchEvent>) {
     )
     {
         Tabs(pagerState = pagerState)
-        TabsContent(pagerState = pagerState,match)
+        TabsContent(pagerState = pagerState, match)
 
     }
 
@@ -349,7 +342,7 @@ fun Tabs(pagerState: PagerState) {
 
 @ExperimentalPagerApi
 @Composable
-fun TabsContent(pagerState: PagerState,match: List<MatchEvent>) {
+fun TabsContent(pagerState: PagerState, match: List<MatchEvent>) {
 
     HorizontalPager(state = pagerState) { page ->
         when (page) {
