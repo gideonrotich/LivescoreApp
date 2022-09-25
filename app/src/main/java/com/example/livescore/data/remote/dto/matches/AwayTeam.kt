@@ -1,4 +1,4 @@
-package com.example.livescore.data.remote.dto
+package com.example.livescore.data.remote.dto.matches
 
 data class AwayTeam(
     val common_name: String?,

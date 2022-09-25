@@ -1,4 +1,4 @@
-package com.example.livescore.data.remote.dto
+package com.example.livescore.data.remote.dto.matches
 
 data class Round(
     val is_current: Any,

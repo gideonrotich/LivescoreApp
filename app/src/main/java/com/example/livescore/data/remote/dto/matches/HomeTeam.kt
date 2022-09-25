@@ -1,4 +1,6 @@
-package com.example.livescore.data.remote.dto
+package com.example.livescore.data.remote.dto.matches
+
+import com.example.livescore.data.remote.dto.matches.Country
 
 data class HomeTeam(
     val common_name: String,
