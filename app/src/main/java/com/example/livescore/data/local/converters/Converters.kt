@@ -6,6 +6,8 @@ import com.example.livescore.data.remote.dto.*
 import com.example.livescore.data.remote.dto.matchdetails.Lineup
 import com.example.livescore.data.remote.dto.matchdetails.MatchEvent
 import com.example.livescore.data.remote.dto.matchdetails.MatchStatistic
+import com.example.livescore.data.remote.dto.matchdetails.Stats
+import com.example.livescore.data.remote.dto.matches.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
