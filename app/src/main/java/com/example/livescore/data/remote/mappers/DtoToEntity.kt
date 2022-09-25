@@ -1,9 +1,16 @@
 package com.example.livescore.data.remote.mappers
 
-import com.example.livescore.data.local.entity.MatchesEntity
-import com.example.livescore.data.remote.dto.Data
+import com.example.livescore.data.remote.dto.matches.Data
+import com.example.livescore.data.remote.dto.standings.Standing
 import com.example.livescore.domain.models.DataModel
 import com.example.livescore.domain.models.MatchDetailsModel
+import com.example.livescore.domain.models.StandingsModel
+
+fun Standing.toEntiy():StandingsModel {
+    return StandingsModel(away, home, overall, points, position, result, status, team_id)
+
+}
+
 
 internal fun Data.toEntity():DataModel{
     return DataModel(
@@ -31,3 +38,4 @@ internal fun com.example.livescore.data.remote.dto.matchdetails.Data.toEntity():
         away_team, group, home_team, league_id, lineups, match_events, match_id, match_start, match_start_iso, match_statistics, minute, referee_id, round, season_id, stage, stats, status, status_code, venue
     )
 }
+

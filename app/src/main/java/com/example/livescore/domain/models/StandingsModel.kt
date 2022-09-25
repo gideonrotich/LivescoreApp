@@ -1,10 +1,17 @@
 package com.example.livescore.domain.models
 
+import com.example.livescore.data.remote.dto.standings.Away
+import com.example.livescore.data.remote.dto.standings.Home
+import com.example.livescore.data.remote.dto.standings.Overall
 import com.example.livescore.data.remote.dto.standings.Standing
 
 data class StandingsModel(
-    val has_groups: Int,
-    val league_id: Int,
-    val season_id: Int,
-    val standings: List<Standing>
+    val away: Away,
+    val home: Home,
+    val overall: Overall,
+    val points: Int,
+    val position: Int,
+    val result: String,
+    val status: String,
+    val team_id: Int
 )
