@@ -65,7 +65,7 @@ fun MatchesScreen(
 
             Spacer(Modifier.height(6.dp))
             Text(
-                text = "Live Match",
+                text = "Live Matches",
                 style = MaterialTheme.typography.body1,
                 color = Color.Black,
                 fontSize = 18.sp,

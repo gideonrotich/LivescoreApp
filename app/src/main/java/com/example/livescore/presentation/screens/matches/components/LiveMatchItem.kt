@@ -178,22 +178,22 @@ fun LiveMatchItem(match: DataModel,onItemClicked:(match:DataModel) -> Unit) {
                             }
                         }
                     }
+                    Spacer(modifier = Modifier.width(16.dp))
                     Column(
                         modifier = Modifier
-                            .fillMaxWidth()
+                            .width(100.dp)
                             .padding(end = 12.dp)
                     ) {
-                        Row() {
-                            Spacer(modifier = Modifier.width(8.dp))
-                            val imagetwo: Painter =
-                                rememberImagePainter(data = match.away_team?.logo)
 
+                        Row {
+                            Spacer(modifier = Modifier.width(8.dp))
+                            val imageTwo: Painter = rememberImagePainter(data = match.away_team?.logo)
                             Image(
                                 modifier = Modifier
                                     .height(50.dp)
                                     .width(50.dp)
                                     .clip(RoundedCornerShape(8.dp)),
-                                painter = imagetwo,
+                                painter = imageTwo,
                                 alignment = Alignment.Center,
                                 contentDescription = "",
                                 contentScale = ContentScale.Crop
@@ -201,6 +201,7 @@ fun LiveMatchItem(match: DataModel,onItemClicked:(match:DataModel) -> Unit) {
                         }
 
                         Spacer(modifier = Modifier.height(4.dp))
+
                         Text(
                             text = "${match.away_team?.name}",
                             style = MaterialTheme.typography.body1,
