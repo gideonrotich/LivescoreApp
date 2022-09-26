@@ -52,7 +52,7 @@ fun MatchesScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.LightGray)
+            .background(color = colorResource(id = R.color.whiter))
     ) {
         Column(
             modifier = Modifier
@@ -80,7 +80,7 @@ fun MatchesScreen(
                 }
             }
             Text(
-                text = "Matches",
+                text = "Upcoming Matches",
                 style = MaterialTheme.typography.body1,
                 color = Color.Black,
                 fontSize = 18.sp,

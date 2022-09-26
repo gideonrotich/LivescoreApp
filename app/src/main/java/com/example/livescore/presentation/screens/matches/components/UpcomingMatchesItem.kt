@@ -40,7 +40,7 @@ fun UpcomingMatchesItem(match: DataModel, onItemClicked: (match: DataModel) -> U
         elevation = 5.dp,
         backgroundColor = White
     ) {
-        Box(modifier = Modifier.height(89.dp)) {
+        Box(modifier = Modifier.height(79.dp)) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
