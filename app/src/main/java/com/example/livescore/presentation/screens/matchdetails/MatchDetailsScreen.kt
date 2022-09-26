@@ -293,7 +293,7 @@ fun TabScreen(match: List<MatchEvent>,one: Int,two:Int) {
 @Composable
 fun Tabs(pagerState: PagerState) {
 
-    val list = listOf("Events", "Lineup", "Stats", "Table")
+    val list = listOf("Events", "Lineup", "Stats", "Odds")
 
     val scope = rememberCoroutineScope()
     TabRow(selectedTabIndex = pagerState.currentPage,
