@@ -72,16 +72,6 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //stats
-    @TypeConverter
-    fun fromStats(str: Stats): String {
-        return Gson().toJson(str)
-    }
-
-    @TypeConverter
-    fun toStats(str: String): Stats {
-        return Gson().fromJson(str, object : TypeToken<String>() {}.type)
-    }
 
     //venue
     @TypeConverter
@@ -185,12 +175,12 @@ class Converters(
 
     //venue
     @TypeConverter
-    fun fromStat(str: com.example.livescore.data.remote.dto.matchdetails.Stats): String {
+    fun fromStatw(str: com.example.livescore.data.remote.dto.matchdetails.Stats): String {
         return Gson().toJson(str)
     }
 
     @TypeConverter
-    fun toStat(str: String): com.example.livescore.data.remote.dto.matchdetails.Stats {
+    fun toStatw(str: String): com.example.livescore.data.remote.dto.matchdetails.Stats {
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 

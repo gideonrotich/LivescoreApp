@@ -6,7 +6,7 @@ import com.example.livescore.domain.models.DataModel
 import com.example.livescore.domain.models.MatchDetailsModel
 import com.example.livescore.domain.models.StandingsModel
 
-fun Standing.toEntiy():StandingsModel {
+internal fun Standing.toEntity():StandingsModel {
     return StandingsModel(away, home, overall, points, position, result, status, team_id)
 
 }
