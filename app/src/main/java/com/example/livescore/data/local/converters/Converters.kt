@@ -72,6 +72,16 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
+    //stats
+    @TypeConverter
+    fun fromStatss(str: com.example.livescore.data.remote.dto.matches.Stats): String {
+        return Gson().toJson(str)
+    }
+
+    @TypeConverter
+    fun toStatss(str: String): com.example.livescore.data.remote.dto.matches.Stats {
+        return Gson().fromJson(str, object : TypeToken<String>() {}.type)
+    }
 
     //venue
     @TypeConverter

@@ -3,6 +3,7 @@ package com.example.livescore.data.local.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.livescore.data.remote.dto.*
+import com.example.livescore.data.remote.dto.matches.*
 
 @Entity(tableName = "matches_table")
 data class MatchesEntity(

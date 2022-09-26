@@ -1,6 +1,7 @@
 package com.example.livescore.domain.models
 
 import com.example.livescore.data.remote.dto.*
+import com.example.livescore.data.remote.dto.matches.*
 
 data class DataModel(
     val away_team: AwayTeam?,
