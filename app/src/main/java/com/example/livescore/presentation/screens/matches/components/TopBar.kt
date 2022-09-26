@@ -74,7 +74,7 @@ fun TopBar(
                     painterResource(id = R.drawable.reggae),
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(top = 4.dp),
+                        .padding(top = 3.dp),
                     contentDescription = ""
                 )
             }

@@ -12,6 +12,6 @@ data class MatchEvent(
     val related_player_id: Int,
     val related_player_name: String,
     val result: String,
-    val team_id: Int,
-    val type: String
+    var team_id: Int,
+    var type: String
 )
