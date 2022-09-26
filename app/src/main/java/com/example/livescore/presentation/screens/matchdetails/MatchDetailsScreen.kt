@@ -251,7 +251,7 @@ fun MatchDetailsScreen(
 
             }
 
-            TabScreen(match.match_events!!)
+            TabScreen(match.match_events!!,match.home_team!!.team_id,match.away_team!!.team_id)
         }
 
         if (matchesState.error.isNotBlank()) {
@@ -266,7 +266,7 @@ fun MatchDetailsScreen(
             )
         }
         if (matchesState.isLoading) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally).size(33.dp))
         }
     }
 
@@ -275,7 +275,7 @@ fun MatchDetailsScreen(
 
 @ExperimentalPagerApi
 @Composable
-fun TabScreen(match: List<MatchEvent>) {
+fun TabScreen(match: List<MatchEvent>,one: Int,two:Int) {
     val pagerState = rememberPagerState(pageCount = 4)
 
     Column(
@@ -283,7 +283,7 @@ fun TabScreen(match: List<MatchEvent>) {
     )
     {
         Tabs(pagerState = pagerState)
-        TabsContent(pagerState = pagerState, match)
+        TabsContent(pagerState = pagerState, match,one,two)
 
     }
 
@@ -293,7 +293,7 @@ fun TabScreen(match: List<MatchEvent>) {
 @Composable
 fun Tabs(pagerState: PagerState) {
 
-    val list = listOf("Events", "Lineup", "Stats", "Table")
+    val list = listOf("Events", "Lineup", "Stats", "Odds")
 
     val scope = rememberCoroutineScope()
     TabRow(selectedTabIndex = pagerState.currentPage,
@@ -342,14 +342,14 @@ fun Tabs(pagerState: PagerState) {
 
 @ExperimentalPagerApi
 @Composable
-fun TabsContent(pagerState: PagerState, match: List<MatchEvent>) {
+fun TabsContent(pagerState: PagerState, match: List<MatchEvent>,one: Int,two: Int) {
 
     HorizontalPager(state = pagerState) { page ->
         when (page) {
-            0 -> TabScreenOne(tabName = "This is a Home Tab Layout", match = match)
+            0 -> TabScreenOne(tabName = "This is a Home Tab Layout", match = match, one = one, two = two)
             1 -> TabScreenTwo(tabName = "This is a Market Tab Layout")
             2 -> TabScreenThree(tabName = "This is a Films Tab Layout")
-            3 -> TabScreenOne(tabName = "mimi ndio kusema", match = match)
+            3 -> TabScreenOne(tabName = "mimi ndio kusema", match = match, one = one, two = two)
 
         }
 

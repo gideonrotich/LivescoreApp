@@ -10,7 +10,7 @@ import com.example.livescore.presentation.FilterContent
 object Constants {
     const val BASE_URL = "https://app.sportdataapi.com/"
 
-    const val API_KEY_TWO = "5854abc0-36b8-11ed-b9f8-af3e9ecb0bee"
+    const val API_KEY_TWO = "9ca19880-3dc1-11ed-8450-63ac23f45f39"
 
     const val GET_MATCHES = "api/v1/soccer/matches"
 
