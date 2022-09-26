@@ -58,12 +58,12 @@ fun MatchDetailsScreen(
 
             Box(
                 modifier = Modifier
-                    .height(200.dp)
+                    .height(240.dp)
                     .fillMaxWidth()
                     .background(colorResource(id = com.example.livescore.R.color.purple))
             ) {
 
-                LazyColumn(modifier = Modifier.fillMaxSize()) {
+                LazyColumn(modifier = Modifier.fillMaxSize().padding(top = 50.dp)) {
                     item {
                         Column(modifier = Modifier.fillMaxSize()) {
                             Row(
@@ -71,7 +71,7 @@ fun MatchDetailsScreen(
                                 horizontalArrangement = Arrangement.SpaceAround,
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(top = 10.dp)
+                                    .padding(top = 6.dp)
                             ) {
                                 Text(
                                     text = "Premier league",
