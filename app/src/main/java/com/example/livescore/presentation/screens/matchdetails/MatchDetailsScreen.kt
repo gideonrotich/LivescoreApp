@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
+import com.example.livescore.data.remote.dto.matchdetails.Lineup
 import com.example.livescore.data.remote.dto.matchdetails.MatchEvent
 import com.example.livescore.domain.models.MatchDetailsModel
 import com.example.livescore.presentation.Screen
@@ -251,7 +252,7 @@ fun MatchDetailsScreen(
 
             }
 
-            TabScreen(match.match_events!!,match.home_team!!.team_id,match.away_team!!.team_id)
+            TabScreen(match.match_events!!,match.home_team!!.team_id,match.away_team!!.team_id,match.lineups!!)
         }
 
         if (matchesState.error.isNotBlank()) {
@@ -275,7 +276,7 @@ fun MatchDetailsScreen(
 
 @ExperimentalPagerApi
 @Composable
-fun TabScreen(match: List<MatchEvent>,one: Int,two:Int) {
+fun TabScreen(match: List<MatchEvent>,one: Int,two:Int,lineup: List<Lineup>) {
     val pagerState = rememberPagerState(pageCount = 4)
 
     Column(
@@ -283,7 +284,7 @@ fun TabScreen(match: List<MatchEvent>,one: Int,two:Int) {
     )
     {
         Tabs(pagerState = pagerState)
-        TabsContent(pagerState = pagerState, match,one,two)
+        TabsContent(pagerState = pagerState, match,one,two,lineup)
 
     }
 
@@ -342,12 +343,12 @@ fun Tabs(pagerState: PagerState) {
 
 @ExperimentalPagerApi
 @Composable
-fun TabsContent(pagerState: PagerState, match: List<MatchEvent>,one: Int,two: Int) {
+fun TabsContent(pagerState: PagerState, match: List<MatchEvent>,one: Int,two: Int,lineup: List<Lineup>) {
 
     HorizontalPager(state = pagerState) { page ->
         when (page) {
             0 -> TabScreenOne(tabName = "This is a Home Tab Layout", match = match, one = one, two = two)
-            1 -> TabScreenTwo(tabName = "This is a Market Tab Layout")
+            1 -> TabScreenTwo(tabName = "This is a Market Tab Layout", lineup = lineup, one = one, two = two)
             2 -> TabScreenThree(tabName = "This is a Films Tab Layout")
             3 -> TabScreenOne(tabName = "mimi ndio kusema", match = match, one = one, two = two)
 

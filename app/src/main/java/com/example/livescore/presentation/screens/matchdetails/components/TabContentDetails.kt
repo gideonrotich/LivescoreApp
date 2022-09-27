@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -17,8 +18,11 @@ import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Alignment.Companion.End
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.integerResource
 import androidx.compose.ui.res.painterResource
@@ -27,8 +31,11 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.rememberImagePainter
 import com.example.livescore.R
+import com.example.livescore.data.remote.dto.matchdetails.Lineup
 import com.example.livescore.data.remote.dto.matchdetails.MatchEvent
+import com.example.livescore.data.remote.dto.matchdetails.Player
 import com.example.livescore.domain.models.MatchDetailsModel
 import com.example.livescore.ui.theme.TabColorTwo
 
@@ -326,7 +333,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                     Row(modifier = Modifier.padding(end = 16.dp, top = 8.dp)) {
 
 
-                                        Column (modifier = Modifier.align(Alignment.CenterVertically)){
+                                        Column(modifier = Modifier.align(Alignment.CenterVertically)) {
                                             Text(
                                                 text = item.player_name + "(${item.result})",
                                                 fontWeight = FontWeight.Bold,
@@ -581,7 +588,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
 
                                     }
                                 }
-                                
+
                             }
 
                         }
@@ -595,22 +602,151 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
 }
 
 @Composable
-fun TabScreenTwo(tabName: String) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
+    Card(
+        modifier = Modifier
+            .padding(6.dp)
+            .fillMaxSize(),
+        shape = RoundedCornerShape(6.dp),
+        elevation = 3.dp,
     ) {
-        Text(
-            text = tabName,
-            style = MaterialTheme.typography.h5,
-            color = TabColorTwo,
-            fontFamily = FontFamily.Monospace,
-            fontStyle = FontStyle.Italic,
-            fontWeight = FontWeight.Bold
-        )
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
 
+
+            LazyRow(
+                modifier = Modifier
+                    .fillMaxSize(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                items(items = lineup) { item ->
+
+                    if (item.team_id == one) {
+
+                        LazyColumn(modifier = Modifier.padding(start = 12.dp)) {
+
+                            items(items = item.players) { items ->
+                                Column {
+
+
+                                    Row(modifier = Modifier.padding(top = 16.dp)) {
+                                        Card(
+                                            shape = RoundedCornerShape(100.dp),
+                                            modifier = Modifier.align(CenterVertically)
+                                        ) {
+                                            Column {
+                                                Row(
+                                                    modifier = Modifier
+                                                        .size(20.dp)
+                                                ) {
+                                                    Image(
+                                                        painter = painterResource(id = R.drawable.reggae),
+                                                        modifier = Modifier
+                                                            .fillMaxSize()
+                                                            .align(Alignment.CenterVertically),
+                                                        contentDescription = "",
+                                                    )
+
+                                                }
+
+                                            }
+                                        }
+                                        Spacer(modifier = Modifier.width(12.dp))
+                                        Text(
+                                            text = items.lastname,
+                                            fontSize = 14.sp,
+                                            modifier = Modifier.align(CenterVertically)
+                                        )
+
+                                        Spacer(modifier = Modifier.width(20.dp))
+
+                                        Text(
+                                            text = items.detailed.number.toString(),
+                                            fontWeight = FontWeight.Bold,
+                                            modifier = Modifier.align(Alignment.CenterVertically),
+                                            fontSize = 15.sp
+                                        )
+
+
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+
+                    if (item.team_id == two) {
+                        LazyColumn(
+                            modifier = Modifier
+                                .align(End)
+                                .padding(end = 12.dp)
+                                .fillMaxSize()
+                        ) {
+                            items(items = item.players) { items ->
+                                Column(
+                                    modifier = Modifier
+                                        .align(End)
+                                        .fillMaxSize()
+                                ) {
+
+
+                                    Row(modifier = Modifier.padding(top = 16.dp)) {
+                                        Card(
+                                            shape = RoundedCornerShape(100.dp),
+                                            modifier = Modifier.align(CenterVertically)
+                                        ) {
+                                            Column {
+                                                Row(
+                                                    modifier = Modifier
+                                                        .size(20.dp)
+                                                ) {
+                                                    Image(
+                                                        painter = painterResource(id = R.drawable.reggae),
+                                                        modifier = Modifier
+                                                            .fillMaxSize()
+                                                            .align(Alignment.CenterVertically),
+                                                        contentDescription = "",
+                                                    )
+
+                                                }
+
+                                            }
+                                        }
+                                        Spacer(modifier = Modifier.width(12.dp))
+                                        Text(
+                                            text = items.lastname,
+                                            fontSize = 14.sp,
+                                            modifier = Modifier.align(CenterVertically)
+                                        )
+
+                                        Spacer(modifier = Modifier.width(20.dp))
+
+                                        Text(
+                                            text = items.detailed.number.toString(),
+                                            fontWeight = FontWeight.Bold,
+                                            modifier = Modifier.align(Alignment.CenterVertically),
+                                            fontSize = 15.sp
+                                        )
+
+
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
     }
+
+
 }
 
 @Composable
