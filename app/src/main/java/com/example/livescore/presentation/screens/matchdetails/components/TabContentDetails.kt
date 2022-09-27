@@ -1,20 +1,25 @@
 package com.example.livescore.presentation.screens.matchdetails.components
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.Center
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Alignment.Companion.End
 import androidx.compose.ui.Modifier
@@ -29,15 +34,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
 import com.example.livescore.R
 import com.example.livescore.data.remote.dto.matchdetails.Lineup
 import com.example.livescore.data.remote.dto.matchdetails.MatchEvent
+import com.example.livescore.data.remote.dto.matchdetails.MatchStatistic
 import com.example.livescore.data.remote.dto.matchdetails.Player
 import com.example.livescore.domain.models.MatchDetailsModel
+import com.example.livescore.ui.theme.SpAtkColor
 import com.example.livescore.ui.theme.TabColorTwo
+
 
 
 @Composable
@@ -631,7 +640,6 @@ fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
                             items(items = item.players) { items ->
                                 Column {
 
-
                                     Row(modifier = Modifier.padding(top = 16.dp)) {
                                         Card(
                                             shape = RoundedCornerShape(100.dp),
@@ -750,20 +758,490 @@ fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
 }
 
 @Composable
-fun TabScreenThree(tabName: String) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+fun TabScreenThree(tabName: String, stata: MatchDetailsModel) {
+    Card(
+        modifier = Modifier
+            .padding(6.dp)
+            .fillMaxSize(),
+        shape = RoundedCornerShape(6.dp),
+        elevation = 3.dp,
+
     ) {
-        Text(
-            text = tabName,
-            style = MaterialTheme.typography.h5,
-            color = TabColorTwo,
-            fontFamily = FontFamily.Monospace,
-            fontStyle = FontStyle.Italic,
-            fontWeight = FontWeight.Bold
-        )
+        Column(horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top, modifier = Modifier.fillMaxSize()) {
+            PokemonBaseStats(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            AttacksAnimation(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            BallSafeAnimation(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            CornersAnimation(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            DangerousAttacksAnimation(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            FoulsAnimation(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            FreeKickAnimation(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            GoalAttemptsAnimation(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            GoalKickAnimation(pokemonInfo = stata)
+            Spacer(modifier = Modifier.height(8.dp))
+            GoalsAnimation(pokemonInfo = stata)
+        }
+
 
     }
 }
+
+
+@Composable
+fun PokemonBaseStats(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.shots_on_target }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Shots on Target",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "Shots on target",
+                    statValue = stat.shots_on_target,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+
+@Composable
+fun PokemonStat(
+    statName: String,
+    statValue: Int,
+    statMaxValue: Int,
+    statColor: Color,
+    height: Dp = 15.dp,
+    animDuration: Int = 1000,
+    animDelay: Int = 0
+) {
+    var animationPlayed by remember {
+        mutableStateOf(false)
+    }
+    val curPercent = animateFloatAsState(
+        targetValue = if (animationPlayed) {
+            statValue / statMaxValue.toFloat()
+        } else 0f,
+        animationSpec = tween(
+            animDuration,
+            animDelay
+        )
+    )
+    LaunchedEffect(key1 = true) {
+        animationPlayed = true
+    }
+    Box(
+        modifier = Modifier
+            .width(150.dp)
+            .height(height)
+            .clip(CircleShape)
+            .background(
+                if (isSystemInDarkTheme()) {
+                    Color(0xFF505050)
+                } else {
+                    Color.LightGray
+                }
+            )
+    ) {
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(curPercent.value)
+                .clip(CircleShape)
+                .background(statColor)
+                .padding(horizontal = 8.dp)
+        ) {
+
+            Text(
+                text = (curPercent.value * statMaxValue).toInt().toString(),
+                fontWeight = FontWeight.Bold, color = Color.White
+            )
+        }
+    }
+}
+
+@Composable
+fun AttacksAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.attacks }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Attacks",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.attacks,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+
+@Composable
+fun BallSafeAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.ball_safe }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Ball safe",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.ball_safe,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+@Composable
+fun CornersAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.corners }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Corners",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.corners,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+@Composable
+fun DangerousAttacksAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.dangerous_attacks }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Dangerous attacks",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.dangerous_attacks,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+@Composable
+fun FoulsAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.fouls }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Fouls",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.fouls,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+@Composable
+fun FreeKickAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.free_kick }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Free kicks",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.free_kick,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+
+@Composable
+fun GoalAttemptsAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.goal_attempts }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Goal attempts",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.goal_attempts,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+@Composable
+fun GoalKickAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.goal_kick }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Goal kick",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.goal_kick,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
+@Composable
+fun GoalsAnimation(
+    pokemonInfo: MatchDetailsModel,
+    animDelayPerItem: Int = 100
+) {
+    val maxBaseStat = remember {
+        pokemonInfo.match_statistics.maxOf { it.goals }
+    }
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Goals",
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            for (i in pokemonInfo.match_statistics.indices) {
+                val stat = pokemonInfo.match_statistics[i]
+                PokemonStat(
+                    statName = "",
+                    statValue = stat.goals,
+                    statMaxValue = maxBaseStat,
+                    statColor = SpAtkColor,
+                    animDelay = i * animDelayPerItem
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+    }
+}
+
