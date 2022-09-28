@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#522482</color>
     <color name="pink">#e90052</color>
-    <color name="whiter">#B8B8B8</color>
+    <color name="whiter">#E3E2E2</color>
+    <color name="whitertwo">#BFBFBF</color>
 </resources>

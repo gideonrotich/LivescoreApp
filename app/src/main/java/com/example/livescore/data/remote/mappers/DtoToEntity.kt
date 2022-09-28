@@ -4,11 +4,16 @@ import com.example.livescore.data.remote.dto.matches.Data
 import com.example.livescore.data.remote.dto.standings.Standing
 import com.example.livescore.domain.models.DataModel
 import com.example.livescore.domain.models.MatchDetailsModel
+import com.example.livescore.domain.models.OddsModel
 import com.example.livescore.domain.models.StandingsModel
 
 internal fun Standing.toEntity():StandingsModel {
     return StandingsModel(away, home, overall, points, position, result, status, team_id)
 
+}
+
+internal fun com.example.livescore.data.remote.dto.odds.Data.toEntity():OddsModel{
+    return OddsModel(FullTimeResult,AsianHandicap,OverUnder)
 }
 
 

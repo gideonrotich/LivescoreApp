@@ -7,6 +7,7 @@ import com.example.livescore.data.remote.mappers.toDomain
 import com.example.livescore.data.remote.mappers.toEntity
 import com.example.livescore.domain.models.DataModel
 import com.example.livescore.domain.models.MatchDetailsModel
+import com.example.livescore.domain.models.OddsModel
 import com.example.livescore.domain.models.StandingsModel
 import com.example.livescore.domain.repository.MatchesRepository
 import com.example.livescore.util.Resource
@@ -97,5 +98,29 @@ class MatchesRepositoryImpl(
         val allMatches = livescoreApi.getMatchDetails(id).data.toEntity()
         emit(Resource.Success(allMatches))
 
+    }
+
+
+    //used to get the match odds
+    override fun getOdds(id: String): Flow<Resource<OddsModel>> = flow{
+        emit(Resource.Loading())
+
+        try {
+
+        } catch (exception: IOException) {
+            emit(
+                Resource.Error(
+                    message = "Connection Lost"
+                )
+            )
+        } catch (exception: HttpException) {
+            emit(
+                Resource.Error(
+                    message = exception.message()
+                )
+            )
+        }
+        val allStandings = livescoreApi.getOdds(id).data.toEntity()
+        emit(Resource.Success(allStandings))
     }
 }

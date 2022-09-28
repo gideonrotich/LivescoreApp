@@ -2,6 +2,7 @@ package com.example.livescore.data.remote.api
 
 import com.example.livescore.data.remote.dto.matchdetails.MatchDetailsDto
 import com.example.livescore.data.remote.dto.matches.MatchesResponseDto
+import com.example.livescore.data.remote.dto.odds.OddsResponseDto
 import com.example.livescore.data.remote.dto.standings.StandingsResponseDto
 import com.example.livescore.util.Constants
 import retrofit2.http.GET
@@ -33,4 +34,10 @@ interface LivescoreApi {
         @Query("apikey") apikey: String = Constants.API_KEY_TWO,
         @Query("season_id") seasonId: String = Constants.PL_ID_MATCHES,
     ): StandingsResponseDto
+
+    //get match odds
+    @GET(Constants.GET_ODDS)
+    suspend fun getOdds(
+        @Query("type")type:String = "prematch"
+    ): OddsResponseDto
 }

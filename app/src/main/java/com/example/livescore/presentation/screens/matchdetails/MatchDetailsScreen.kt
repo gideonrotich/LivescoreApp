@@ -269,7 +269,7 @@ fun MatchDetailsScreen(
             )
         }
         if (matchesState.isLoading) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally).size(33.dp))
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally).size(33.dp).padding(top = 100.dp))
         }
     }
 

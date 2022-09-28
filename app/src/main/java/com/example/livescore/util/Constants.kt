@@ -22,6 +22,10 @@ object Constants {
 
     const val GET_STANDINGS = "api/v1/soccer/standings"
 
+    const val GET_ODDS = "api/v1/soccer/odds/{id}"
+
+    const val PARAM_ODD_ID = "id"
+
     val FILTER_CONTENT_LIST = listOf(
         FilterContent(R.drawable.premier_logo,Color.White, R.color.pink, "Premier League"),
         FilterContent(R.drawable.mylogo,Black, R.color.white, "Laliga"),
