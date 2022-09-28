@@ -5,15 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.R
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountBox
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -30,20 +23,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
-import com.example.livescore.data.remote.dto.matchdetails.Data
 import com.example.livescore.data.remote.dto.matchdetails.Lineup
 import com.example.livescore.data.remote.dto.matchdetails.MatchEvent
-import com.example.livescore.data.remote.dto.matchdetails.MatchStatistic
 import com.example.livescore.domain.models.MatchDetailsModel
-import com.example.livescore.presentation.Screen
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenOne
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenThree
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenTwo
-import com.example.livescore.presentation.screens.matches.components.LiveMatchItem
-import com.example.livescore.presentation.screens.matches.components.MatchesViewModel
-import com.example.livescore.ui.theme.TabColorOne
 import com.google.accompanist.pager.*
 import kotlinx.coroutines.launch
 
@@ -63,10 +49,22 @@ fun MatchDetailsScreen(
                 modifier = Modifier
                     .height(240.dp)
                     .fillMaxWidth()
-                    .background(colorResource(id = com.example.livescore.R.color.purple))
+
             ) {
 
-                LazyColumn(modifier = Modifier.fillMaxSize().padding(top = 50.dp)) {
+                Column(modifier = Modifier.fillMaxSize()) {
+                    Image(
+                        painter = painterResource(id = com.example.livescore.R.drawable.me),
+                        modifier = Modifier
+                            .fillMaxSize(),
+                        contentDescription = "",
+
+                        )
+                }
+
+                LazyColumn(modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 40.dp)) {
                     item {
                         Column(modifier = Modifier.fillMaxSize()) {
                             Row(
@@ -146,21 +144,21 @@ fun MatchDetailsScreen(
                                         .width(100.dp)
                                         .align(alignment = Alignment.CenterVertically)
                                 ) {
-                                    Row() {
-                                        val imaged: Painter =
-                                            rememberImagePainter(data = com.example.livescore.R.drawable.premier_logo)
-
-                                        Image(
-                                            modifier = Modifier
-                                                .height(100.dp)
-                                                .width(80.dp)
-                                                .clip(RoundedCornerShape(8.dp)),
-                                            painter = imaged,
-                                            alignment = Alignment.Center,
-                                            contentDescription = "",
-                                            contentScale = ContentScale.Crop
-                                        )
-                                    }
+//                                    Row() {
+//                                        val imaged: Painter =
+//                                            rememberImagePainter(data = com.example.livescore.R.drawable.premier_logo)
+//
+//                                        Image(
+//                                            modifier = Modifier
+//                                                .height(100.dp)
+//                                                .width(80.dp)
+//                                                .clip(RoundedCornerShape(8.dp)),
+//                                            painter = imaged,
+//                                            alignment = Alignment.Center,
+//                                            contentDescription = "",
+//                                            contentScale = ContentScale.Crop
+//                                        )
+//                                    }
 
                                     Column() {
 
@@ -269,7 +267,10 @@ fun MatchDetailsScreen(
             )
         }
         if (matchesState.isLoading) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally).size(33.dp).padding(top = 100.dp))
+            CircularProgressIndicator(modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .size(33.dp)
+                .padding(top = 100.dp))
         }
     }
 

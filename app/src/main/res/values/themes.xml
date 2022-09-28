@@ -3,7 +3,7 @@
 
     <style name="Theme.Livescore" parent="android:Theme.Material.Light.NoActionBar">
 <!--        <item name="android:statusBarColor">#522482</item>-->
-        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:statusBarColor">@color/whitertwo</item>
