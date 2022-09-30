@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.livescore.presentation.Screen
+import com.example.livescore.presentation.navigation.MainScreenView
 import com.example.livescore.presentation.screens.matchdetails.MatchDetailsScreen
 import com.example.livescore.presentation.screens.matches.MatchesScreen
 import com.example.livescore.ui.theme.LivescoreTheme
@@ -24,23 +25,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val navController = rememberNavController()
-            NavHost(
-                navController = navController,
-                startDestination = Screen.MatchScreen.route
-            ) {
-                composable(
-                    route = Screen.MatchScreen.route
-                ) {
-                    MatchesScreen(navController)
-                }
-                composable(
-                    route = Screen.MatchDetailsScreen.route + "/{id}"
-                ) {
-                    MatchDetailsScreen()
-                }
-
-            }
+            MainScreenView()
         }
     }
 }
