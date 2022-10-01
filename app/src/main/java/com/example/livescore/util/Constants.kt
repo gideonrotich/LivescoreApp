@@ -27,7 +27,7 @@ object Constants {
     val FILTER_CONTENT_LIST = listOf(
         FilterContent(R.drawable.premier_logo,Color.White, R.color.pink, "Premier League"),
         FilterContent(R.drawable.mylogo,Black, R.color.white, "Laliga"),
-        FilterContent(R.drawable.testone,Black, R.color.white, "Serie A"),
+        FilterContent(R.drawable.test,Black, R.color.white, "Serie A"),
         FilterContent(R.drawable.league,Black, R.color.white, "League 1"),
         FilterContent(R.drawable.league,Black, R.color.white, "League 1")
     )

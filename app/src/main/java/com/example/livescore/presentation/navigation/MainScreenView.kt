@@ -10,6 +10,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.livescore.R
 
 @Composable
 fun MainScreenView(){
@@ -26,10 +27,11 @@ fun MainScreenView(){
 fun BottomNavigation(navController: NavController) {
     val items = listOf(
         BottomNavItem.Games,
-        BottomNavItem.Standings
+        BottomNavItem.Standings,
+        BottomNavItem.Topscorer
     )
     BottomNavigation(
-        backgroundColor = Color.Black,
+        backgroundColor = colorResource(id = R.color.purple),
         contentColor = Color.White
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()

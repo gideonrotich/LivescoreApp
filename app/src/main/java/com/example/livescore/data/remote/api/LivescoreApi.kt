@@ -27,7 +27,6 @@ interface LivescoreApi {
         @Query("apikey") apikey: String = Constants.API_KEY_TWO
     ): MatchDetailsDto
 
-
     //get league standings
     @GET(Constants.GET_STANDINGS)
     suspend fun geStandings(

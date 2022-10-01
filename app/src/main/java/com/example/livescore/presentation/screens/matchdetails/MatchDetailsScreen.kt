@@ -30,6 +30,7 @@ import com.example.livescore.domain.models.MatchDetailsModel
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenOne
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenThree
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenTwo
+import com.example.livescore.presentation.screens.odds.OddsScreen
 import com.google.accompanist.pager.*
 import kotlinx.coroutines.launch
 
@@ -58,6 +59,7 @@ fun MatchDetailsScreen(
                         modifier = Modifier
                             .fillMaxSize(),
                         contentDescription = "",
+                        contentScale = ContentScale.FillWidth
 
                         )
                 }
@@ -252,7 +254,7 @@ fun MatchDetailsScreen(
 
             }
 
-            TabScreen(match.match_events!!,match.home_team!!.team_id,match.away_team!!.team_id,match.lineups!!,match)
+            TabScreen(match.match_events!!,match.home_team!!.team_id,match.away_team!!.team_id,match.lineups!!,match,match.match_id.toString())
         }
 
         if (matchesState.error.isNotBlank()) {
@@ -279,7 +281,7 @@ fun MatchDetailsScreen(
 
 @ExperimentalPagerApi
 @Composable
-fun TabScreen(match: List<MatchEvent>,one: Int,two:Int,lineup: List<Lineup>,masa:MatchDetailsModel) {
+fun TabScreen(match: List<MatchEvent>,one: Int,two:Int,lineup: List<Lineup>,masa:MatchDetailsModel,matchId:String) {
     val pagerState = rememberPagerState(pageCount = 4)
 
     Column(
@@ -287,7 +289,7 @@ fun TabScreen(match: List<MatchEvent>,one: Int,two:Int,lineup: List<Lineup>,masa
     )
     {
         Tabs(pagerState = pagerState)
-        TabsContent(pagerState = pagerState, match,one,two,lineup,masa)
+        TabsContent(pagerState = pagerState, match,one,two,lineup,masa,matchId)
 
     }
 
@@ -346,14 +348,14 @@ fun Tabs(pagerState: PagerState) {
 
 @ExperimentalPagerApi
 @Composable
-fun TabsContent(pagerState: PagerState, match: List<MatchEvent>,one: Int,two: Int,lineup: List<Lineup>,masa:MatchDetailsModel) {
+fun TabsContent(pagerState: PagerState, match: List<MatchEvent>,one: Int,two: Int,lineup: List<Lineup>,masa:MatchDetailsModel,matchId: String) {
 
     HorizontalPager(state = pagerState) { page ->
         when (page) {
             0 -> TabScreenOne(tabName = "This is a Home Tab Layout", match = match, one = one, two = two)
             1 -> TabScreenTwo(tabName = "This is a Market Tab Layout", lineup = lineup, one = one, two = two)
             2 -> TabScreenThree(tabName = "This is a Films Tab Layout", stata = masa)
-            3 -> TabScreenOne(tabName = "mimi ndio kusema", match = match, one = one, two = two)
+            3 -> OddsScreen(matchId = matchId)
 
         }
 

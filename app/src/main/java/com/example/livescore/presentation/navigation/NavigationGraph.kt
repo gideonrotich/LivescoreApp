@@ -19,6 +19,9 @@ fun NavigationGraph(navController: NavHostController) {
         composable(BottomNavItem.Standings.screen_route) {
             StandingScreen()
         }
+        composable(BottomNavItem.Topscorer.screen_route) {
+            StandingScreen()
+        }
         composable(
             route = Screen.MatchDetailsScreen.route + "/{id}"
         ) {
