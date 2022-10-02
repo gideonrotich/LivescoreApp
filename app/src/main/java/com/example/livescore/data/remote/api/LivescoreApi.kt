@@ -37,6 +37,8 @@ interface LivescoreApi {
     //get match odds
     @GET(Constants.GET_ODDS)
     suspend fun getOdds(
-        @Query("type")type:String = "prematch"
+        @Path("id")id:String,
+        @Query("apikey") apikey: String = Constants.API_KEY_TWO,
+        @Query("type")type:String = "prematch",
     ): OddsResponseDto
 }

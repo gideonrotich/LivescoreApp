@@ -14,23 +14,15 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.livescore.data.remote.dto.odds.Bookmaker
 
 @Composable
-fun OddsScreen(matchId:String,oddsViewModel: OddsViewModel = hiltViewModel()){
-
-
-
-    val oddsState = oddsViewModel.state.value
+fun OddsScreen(book:List<Bookmaker>){
 
     Box(modifier = Modifier.fillMaxSize()){
         Column(modifier = Modifier
             .fillMaxSize()
             .padding(20.dp)) {
-           oddsState.odds.let { odd ->
-               LazyColumn(modifier = Modifier.fillMaxSize()){
-
-                  items(items = odd?.FullTimeResult!!.bookmakers){odds ->
-                        Text(text = odds.bookmaker_name)
-                      oddsViewModel.getOdds(matchId)
-                  }
+           LazyColumn(){
+               items(items = book){books ->
+                   Text(text = books.bookmaker_name)
                }
            }
         }

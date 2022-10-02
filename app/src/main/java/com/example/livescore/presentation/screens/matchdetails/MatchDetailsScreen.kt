@@ -26,6 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberImagePainter
 import com.example.livescore.data.remote.dto.matchdetails.Lineup
 import com.example.livescore.data.remote.dto.matchdetails.MatchEvent
+import com.example.livescore.data.remote.dto.odds.Bookmaker
 import com.example.livescore.domain.models.MatchDetailsModel
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenOne
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenThree
@@ -61,12 +62,14 @@ fun MatchDetailsScreen(
                         contentDescription = "",
                         contentScale = ContentScale.FillWidth
 
-                        )
+                    )
                 }
 
-                LazyColumn(modifier = Modifier
-                    .fillMaxSize()
-                    .padding(top = 40.dp)) {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 40.dp)
+                ) {
                     item {
                         Column(modifier = Modifier.fillMaxSize()) {
                             Row(
@@ -254,7 +257,22 @@ fun MatchDetailsScreen(
 
             }
 
-            TabScreen(match.match_events!!,match.home_team!!.team_id,match.away_team!!.team_id,match.lineups!!,match,match.match_id.toString())
+            Column() {
+                matchesState.odds?.let { odd ->
+                    TabScreen(
+                        match.match_events!!,
+                        match.home_team!!.team_id,
+                        match.away_team!!.team_id,
+                        match.lineups!!,
+                        match,
+                        match.match_id.toString(),
+                        odd.FullTimeResult.bookmakers
+                    )
+                }
+
+            }
+
+
         }
 
         if (matchesState.error.isNotBlank()) {
@@ -269,10 +287,12 @@ fun MatchDetailsScreen(
             )
         }
         if (matchesState.isLoading) {
-            CircularProgressIndicator(modifier = Modifier
-                .align(Alignment.CenterHorizontally)
-                .size(33.dp)
-                .padding(top = 100.dp))
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .size(33.dp)
+                    .padding(top = 100.dp)
+            )
         }
     }
 
@@ -281,7 +301,15 @@ fun MatchDetailsScreen(
 
 @ExperimentalPagerApi
 @Composable
-fun TabScreen(match: List<MatchEvent>,one: Int,two:Int,lineup: List<Lineup>,masa:MatchDetailsModel,matchId:String) {
+fun TabScreen(
+    match: List<MatchEvent>,
+    one: Int,
+    two: Int,
+    lineup: List<Lineup>,
+    masa: MatchDetailsModel,
+    matchId: String,
+    odd:List<Bookmaker>
+) {
     val pagerState = rememberPagerState(pageCount = 4)
 
     Column(
@@ -289,7 +317,7 @@ fun TabScreen(match: List<MatchEvent>,one: Int,two:Int,lineup: List<Lineup>,masa
     )
     {
         Tabs(pagerState = pagerState)
-        TabsContent(pagerState = pagerState, match,one,two,lineup,masa,matchId)
+        TabsContent(pagerState = pagerState, match, one, two, lineup, masa, matchId,odd)
 
     }
 
@@ -348,14 +376,33 @@ fun Tabs(pagerState: PagerState) {
 
 @ExperimentalPagerApi
 @Composable
-fun TabsContent(pagerState: PagerState, match: List<MatchEvent>,one: Int,two: Int,lineup: List<Lineup>,masa:MatchDetailsModel,matchId: String) {
+fun TabsContent(
+    pagerState: PagerState,
+    match: List<MatchEvent>,
+    one: Int,
+    two: Int,
+    lineup: List<Lineup>,
+    masa: MatchDetailsModel,
+    matchId: String,
+    odd:List<Bookmaker>
+) {
 
     HorizontalPager(state = pagerState) { page ->
         when (page) {
-            0 -> TabScreenOne(tabName = "This is a Home Tab Layout", match = match, one = one, two = two)
-            1 -> TabScreenTwo(tabName = "This is a Market Tab Layout", lineup = lineup, one = one, two = two)
+            0 -> TabScreenOne(
+                tabName = "This is a Home Tab Layout",
+                match = match,
+                one = one,
+                two = two
+            )
+            1 -> TabScreenTwo(
+                tabName = "This is a Market Tab Layout",
+                lineup = lineup,
+                one = one,
+                two = two
+            )
             2 -> TabScreenThree(tabName = "This is a Films Tab Layout", stata = masa)
-            3 -> OddsScreen(matchId = matchId)
+            3 -> OddsScreen(book = odd)
 
         }
 
