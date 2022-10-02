@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import com.example.livescore.presentation.Screen
 import com.example.livescore.presentation.screens.matchdetails.MatchDetailsScreen
 import com.example.livescore.presentation.screens.matches.MatchesScreen
+import com.example.livescore.presentation.screens.scorers.components.ScorersScreen
 import com.example.livescore.presentation.screens.standings.components.StandingScreen
 
 @Composable
@@ -20,7 +21,7 @@ fun NavigationGraph(navController: NavHostController) {
             StandingScreen()
         }
         composable(BottomNavItem.Topscorer.screen_route) {
-            StandingScreen()
+            ScorersScreen()
         }
         composable(
             route = Screen.MatchDetailsScreen.route + "/{id}"

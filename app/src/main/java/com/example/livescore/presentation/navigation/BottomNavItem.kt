@@ -7,4 +7,5 @@ sealed class BottomNavItem(var title:String, var icon:Int, var screen_route:Stri
     object Standings: BottomNavItem("Standings",R.drawable.ic_league,"standings")
     object Topscorer: BottomNavItem("TopScorers",R.drawable.ic_league,"TopScorers")
 
+
 }

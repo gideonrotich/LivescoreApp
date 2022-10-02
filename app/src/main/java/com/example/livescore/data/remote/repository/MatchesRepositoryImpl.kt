@@ -5,10 +5,7 @@ import com.example.livescore.data.local.dao.MatchesDao
 import com.example.livescore.data.remote.api.LivescoreApi
 import com.example.livescore.data.remote.mappers.toDomain
 import com.example.livescore.data.remote.mappers.toEntity
-import com.example.livescore.domain.models.DataModel
-import com.example.livescore.domain.models.MatchDetailsModel
-import com.example.livescore.domain.models.OddsModel
-import com.example.livescore.domain.models.StandingsModel
+import com.example.livescore.domain.models.*
 import com.example.livescore.domain.repository.MatchesRepository
 import com.example.livescore.util.Resource
 import kotlinx.coroutines.flow.Flow
@@ -122,5 +119,27 @@ class MatchesRepositoryImpl(
         }
         val allStandings = livescoreApi.getOdds(id).data.toEntity()
         emit(Resource.Success(allStandings))
+    }
+
+    override fun getScorers(): Flow<Resource<List<ScorersModel>>> = flow {
+        emit(Resource.Loading())
+
+        try {
+
+        } catch (exception: IOException) {
+            emit(
+                Resource.Error(
+                    message = "Connection Lost"
+                )
+            )
+        } catch (exception: HttpException) {
+            emit(
+                Resource.Error(
+                    message = exception.message()
+                )
+            )
+        }
+        val allScorers = livescoreApi.getScorers().data.map { it.toEntity() }
+        emit(Resource.Success(allScorers))
     }
 }

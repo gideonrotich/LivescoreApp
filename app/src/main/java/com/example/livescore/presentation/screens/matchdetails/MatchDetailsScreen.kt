@@ -257,8 +257,7 @@ fun MatchDetailsScreen(
 
             }
 
-            Column() {
-                matchesState.odds?.let { odd ->
+
                     TabScreen(
                         match.match_events!!,
                         match.home_team!!.team_id,
@@ -266,11 +265,7 @@ fun MatchDetailsScreen(
                         match.lineups!!,
                         match,
                         match.match_id.toString(),
-                        odd.FullTimeResult.bookmakers
                     )
-                }
-
-            }
 
 
         }
@@ -308,16 +303,15 @@ fun TabScreen(
     lineup: List<Lineup>,
     masa: MatchDetailsModel,
     matchId: String,
-    odd:List<Bookmaker>
 ) {
-    val pagerState = rememberPagerState(pageCount = 4)
+    val pagerState = rememberPagerState(pageCount = 3)
 
     Column(
         modifier = Modifier.background(Color.White)
     )
     {
         Tabs(pagerState = pagerState)
-        TabsContent(pagerState = pagerState, match, one, two, lineup, masa, matchId,odd)
+        TabsContent(pagerState = pagerState, match, one, two, lineup, masa, matchId)
 
     }
 
@@ -327,7 +321,7 @@ fun TabScreen(
 @Composable
 fun Tabs(pagerState: PagerState) {
 
-    val list = listOf("Events", "Lineup", "Stats", "Odds")
+    val list = listOf("Events", "Lineup", "Stats")
 
     val scope = rememberCoroutineScope()
     TabRow(selectedTabIndex = pagerState.currentPage,
@@ -384,7 +378,6 @@ fun TabsContent(
     lineup: List<Lineup>,
     masa: MatchDetailsModel,
     matchId: String,
-    odd:List<Bookmaker>
 ) {
 
     HorizontalPager(state = pagerState) { page ->
@@ -402,7 +395,7 @@ fun TabsContent(
                 two = two
             )
             2 -> TabScreenThree(tabName = "This is a Films Tab Layout", stata = masa)
-            3 -> OddsScreen(book = odd)
+
 
         }
 

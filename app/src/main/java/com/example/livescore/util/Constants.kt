@@ -22,6 +22,8 @@ object Constants {
 
     const val GET_ODDS = "api/v1/soccer/odds/{id}"
 
+    const val GET_SCORERS = "api/v1/soccer/topscorers"
+
     const val PARAM_ODD_ID = "id"
 
     val FILTER_CONTENT_LIST = listOf(

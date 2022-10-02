@@ -2,14 +2,15 @@ package com.example.livescore.data.remote.mappers
 
 import com.example.livescore.data.remote.dto.matches.Data
 import com.example.livescore.data.remote.dto.standings.Standing
-import com.example.livescore.domain.models.DataModel
-import com.example.livescore.domain.models.MatchDetailsModel
-import com.example.livescore.domain.models.OddsModel
-import com.example.livescore.domain.models.StandingsModel
+import com.example.livescore.domain.models.*
 
 internal fun Standing.toEntity():StandingsModel {
     return StandingsModel(away, home, overall, points, position, result, status, team_id)
 
+}
+
+internal fun com.example.livescore.data.remote.dto.scorers.Data.toEntity():ScorersModel{
+    return ScorersModel(goals, league_id, matches_played, minutes_played, penalties, player, pos, season_id, substituted_in, team)
 }
 
 internal fun com.example.livescore.data.remote.dto.odds.Data.toEntity():OddsModel{
