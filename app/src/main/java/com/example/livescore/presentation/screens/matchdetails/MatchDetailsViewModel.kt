@@ -30,6 +30,7 @@ class MatchDetailsViewModel @Inject constructor(
     init {
         savedStateHandle.get<String>(Constants.PARAM_MATCH_ID)?.let { match ->
             getMatchDetails(match)
+            getOdds(match)
         }
     }
 
@@ -38,7 +39,7 @@ class MatchDetailsViewModel @Inject constructor(
             when(result){
                 is Resource.Success -> {
                     _state.value = MatchDetailsState(matchdetails = result.data)
-                    getOdds(id)
+//
                 }
                 is Resource.Error -> {
                     _state.value = MatchDetailsState(
