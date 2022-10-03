@@ -31,5 +31,6 @@ class GetMatchesViewModelTest {
     @Test
     fun `call to fetch matches`() = runTest {
         getMatchesViewModel.getAllMatches()
+        verify(getMatchesUseCase).invoke()
     }
 }
