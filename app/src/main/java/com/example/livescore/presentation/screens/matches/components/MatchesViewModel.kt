@@ -23,7 +23,7 @@ class MatchesViewModel @Inject constructor(
         getAllMatches()
     }
 
-    private fun getAllMatches(){
+     fun getAllMatches(){
         getMatchesUseCase().onEach { result ->
             when (result){
                 is Resource.Success -> {

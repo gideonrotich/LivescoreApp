@@ -258,14 +258,14 @@ fun MatchDetailsScreen(
             }
 
 
-                    TabScreen(
-                        match.match_events!!,
-                        match.home_team!!.team_id,
-                        match.away_team!!.team_id,
-                        match.lineups!!,
-                        match,
-                        match.match_id.toString(),
-                    )
+            TabScreen(
+                match.match_events!!,
+                match.home_team!!.team_id,
+                match.away_team!!.team_id,
+                match.lineups!!,
+                match,
+                match.match_id.toString(),
+            )
 
 
         }
@@ -383,18 +383,18 @@ fun TabsContent(
     HorizontalPager(state = pagerState) { page ->
         when (page) {
             0 -> TabScreenOne(
-                tabName = "This is a Home Tab Layout",
+                tabName = "This is a Match events Tab Layout",
                 match = match,
                 one = one,
                 two = two
             )
             1 -> TabScreenTwo(
-                tabName = "This is a Market Tab Layout",
+                tabName = "This is a Lineup tab Layout",
                 lineup = lineup,
                 one = one,
                 two = two
             )
-            2 -> TabScreenThree(tabName = "This is a Films Tab Layout", stata = masa)
+            2 -> TabScreenThree(tabName = "This is a stats tab Layout", stata = masa)
 
 
         }

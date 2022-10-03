@@ -1,0 +1,839 @@
+{
+  "query": {
+    "apikey": "5854abc0-36b8-11ed-b9f8-af3e9ecb0bee"
+  },
+  "data": {
+    "match_id": 315814,
+    "league_id": 237,
+    "round": {
+      "round_id": 35014,
+      "name": "1",
+      "is_current": null
+    },
+    "referee_id": null,
+    "season_id": 1980,
+    "stage": {
+      "stage_id": 1,
+      "name": "Regular Season"
+    },
+    "group": {
+      "group_id": 103,
+      "group_name": "Premier League"
+    },
+    "status_code": 3,
+    "match_start": "2021-08-13 19:00:00",
+    "match_start_iso": "2021-08-13T19:00:00+00:00",
+    "minute": 90,
+    "status": "finished",
+    "stats": {
+      "ht_score": "1-0",
+      "ft_score": "2-0",
+      "et_score": null,
+      "ps_score": null
+    },
+    "home_team": {
+      "team_id": 2537,
+      "name": "Brentford FC",
+      "short_code": "BFC",
+      "common_name": "",
+      "logo": "https://cdn.sportdataapi.com/images/soccer/teams/100/265.png",
+      "country": {
+        "country_id": 42,
+        "name": "England",
+        "country_code": "en",
+        "continent": "Europe"
+      }
+    },
+    "away_team": {
+      "team_id": 2522,
+      "name": "Arsenal FC",
+      "short_code": "ARS",
+      "common_name": "",
+      "logo": "https://cdn.sportdataapi.com/images/soccer/teams/100/18.png",
+      "country": {
+        "country_id": 42,
+        "name": "England",
+        "country_code": "en",
+        "continent": "Europe"
+      }
+    },
+    "match_events": [
+      {
+        "team_id": 2537,
+        "type": "goal",
+        "player_id": 3169,
+        "player_name": "Canos, Sergi",
+        "related_player_id": null,
+        "related_player_name": "Pinnock, Ethan",
+        "minute": 22,
+        "extra_minute": null,
+        "reason": null,
+        "injured": null,
+        "own_goal": false,
+        "penalty": false,
+        "result": "1-0"
+      },
+      {
+        "team_id": 2537,
+        "type": "injury",
+        "player_id": 3173,
+        "player_name": "Jansson, Pontus",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 42,
+        "extra_minute": null,
+        "reason": null,
+        "injured": "1",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "back from injury",
+        "player_id": 3173,
+        "player_name": "Jansson, Pontus",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 43,
+        "extra_minute": null,
+        "reason": null,
+        "injured": "0",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "injury",
+        "player_id": 3647,
+        "player_name": "Toney, Ivan",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 54,
+        "extra_minute": null,
+        "reason": null,
+        "injured": "1",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "back from injury",
+        "player_id": 3647,
+        "player_name": "Toney, Ivan",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 55,
+        "extra_minute": null,
+        "reason": null,
+        "injured": "0",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2522,
+        "type": "substitution",
+        "player_id": 41117,
+        "player_name": "Balogun, Folarin",
+        "related_player_id": 3304,
+        "related_player_name": "Saka, Bukayo",
+        "minute": 58,
+        "extra_minute": null,
+        "reason": null,
+        "injured": null,
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "injury",
+        "player_id": 11667,
+        "player_name": "Ajer, Kristoffer",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 60,
+        "extra_minute": null,
+        "reason": null,
+        "injured": "1",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "back from injury",
+        "player_id": 11667,
+        "player_name": "Ajer, Kristoffer",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 62,
+        "extra_minute": null,
+        "reason": null,
+        "injured": "0",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2522,
+        "type": "injury",
+        "player_id": 23430,
+        "player_name": "Mari, Pablo",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 62,
+        "extra_minute": null,
+        "reason": null,
+        "injured": "1",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2522,
+        "type": "back from injury",
+        "player_id": 23430,
+        "player_name": "Mari, Pablo",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 64,
+        "extra_minute": null,
+        "reason": null,
+        "injured": "0",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "substitution",
+        "player_id": 11667,
+        "player_name": "Ajer, Kristoffer",
+        "related_player_id": 3660,
+        "related_player_name": "Bech, Mads",
+        "minute": 71,
+        "extra_minute": null,
+        "reason": null,
+        "injured": null,
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2522,
+        "type": "substitution",
+        "player_id": 20712,
+        "player_name": "Martinelli, Gabriel",
+        "related_player_id": 15992,
+        "related_player_name": "Nelson, Reiss",
+        "minute": 71,
+        "extra_minute": null,
+        "reason": null,
+        "injured": null,
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "goal",
+        "player_id": 3430,
+        "player_name": "Norgaard, Christian",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 73,
+        "extra_minute": null,
+        "reason": null,
+        "injured": null,
+        "own_goal": false,
+        "penalty": false,
+        "result": "2-0"
+      },
+      {
+        "team_id": 2537,
+        "type": "substitution",
+        "player_id": 18859,
+        "player_name": "Onyeka, Frank",
+        "related_player_id": null,
+        "related_player_name": "Bidstrup, Mads",
+        "minute": 80,
+        "extra_minute": null,
+        "reason": null,
+        "injured": null,
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2522,
+        "type": "substitution",
+        "player_id": 3381,
+        "player_name": "Chambers, Calum",
+        "related_player_id": 6185,
+        "related_player_name": "Tavares, Nuno",
+        "minute": 82,
+        "extra_minute": null,
+        "reason": null,
+        "injured": null,
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "substitution",
+        "player_id": 3431,
+        "player_name": "Mbeumo, Bryan",
+        "related_player_id": 16722,
+        "related_player_name": "Forss, Marcus",
+        "minute": 86,
+        "extra_minute": null,
+        "reason": null,
+        "injured": null,
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      },
+      {
+        "team_id": 2537,
+        "type": "back from injury",
+        "player_id": 3177,
+        "player_name": "Henry, Rico",
+        "related_player_id": null,
+        "related_player_name": null,
+        "minute": 90,
+        "extra_minute": 3,
+        "reason": null,
+        "injured": "0",
+        "own_goal": false,
+        "penalty": false,
+        "result": null
+      }
+    ],
+    "match_statistics": [
+      {
+        "team_id": 2537,
+        "team_name": "Brentford FC",
+        "fouls": 12,
+        "injuries": 4,
+        "corners": 2,
+        "offsides": 1,
+        "shots_total": 8,
+        "shots_on_target": 3,
+        "shots_off_target": 5,
+        "shots_blocked": 0,
+        "possessiontime": 0,
+        "possessionpercent": 35,
+        "yellowcards": 0,
+        "yellowredcards": 0,
+        "redcards": 0,
+        "substitutions": 3,
+        "goal_kick": 16,
+        "goal_attempts": 8,
+        "free_kick": 9,
+        "throw_in": 20,
+        "ball_safe": 58,
+        "goals": 2,
+        "penalties": 0,
+        "attacks": 20,
+        "dangerous_attacks": 22
+      },
+      {
+        "team_id": 2522,
+        "team_name": "Arsenal FC",
+        "fouls": 8,
+        "injuries": 1,
+        "corners": 5,
+        "offsides": 1,
+        "shots_total": 22,
+        "shots_on_target": 5,
+        "shots_off_target": 12,
+        "shots_blocked": 5,
+        "possessiontime": 0,
+        "possessionpercent": 65,
+        "yellowcards": 0,
+        "yellowredcards": 0,
+        "redcards": 0,
+        "substitutions": 3,
+        "goal_kick": 8,
+        "goal_attempts": 17,
+        "free_kick": 13,
+        "throw_in": 25,
+        "ball_safe": 39,
+        "goals": 0,
+        "penalties": 0,
+        "attacks": 29,
+        "dangerous_attacks": 32
+      }
+    ],
+    "lineups": [
+      {
+        "team_id": 2537,
+        "formation": "3-5-2",
+        "formation_confirmed": 1,
+        "players": [
+          {
+            "player_id": 3163,
+            "firstname": "David",
+            "lastname": "Raya Martin",
+            "birthday": "1995-09-15",
+            "age": 27,
+            "weight": 80,
+            "height": 183,
+            "img": "",
+            "country": {
+              "country_id": 113,
+              "name": "Spain",
+              "country_code": "es",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 1,
+              "position": "G",
+              "order": 1
+            }
+          },
+          {
+            "player_id": 11667,
+            "firstname": "Kristoffer Vassbakk",
+            "lastname": "Ajer",
+            "birthday": "1998-04-17",
+            "age": 24,
+            "weight": 84,
+            "height": 196,
+            "img": "",
+            "country": {
+              "country_id": 89,
+              "name": "Norway",
+              "country_code": "no",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 20,
+              "position": "M",
+              "order": 2
+            }
+          },
+          {
+            "player_id": 3173,
+            "firstname": "Pontus",
+            "lastname": "Jansson",
+            "birthday": null,
+            "age": null,
+            "weight": null,
+            "height": null,
+            "img": "https://cdn.sportdataapi.com/images/soccer/players/50/22777.png",
+            "country": null,
+            "detailed": {
+              "number": 18,
+              "position": "D",
+              "order": 3
+            }
+          },
+          {
+            "player_id": 3165,
+            "firstname": "Ethan Rupert",
+            "lastname": "Pinnock",
+            "birthday": "1993-05-29",
+            "age": 29,
+            "weight": null,
+            "height": 187,
+            "img": "",
+            "country": {
+              "country_id": 42,
+              "name": "England",
+              "country_code": "en",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 5,
+              "position": "D",
+              "order": 4
+            }
+          },
+          {
+            "player_id": 3169,
+            "firstname": "Sergi",
+            "lastname": "Canos",
+            "birthday": null,
+            "age": null,
+            "weight": null,
+            "height": null,
+            "img": "https://cdn.sportdataapi.com/images/soccer/players/50/27026.png",
+            "country": null,
+            "detailed": {
+              "number": 7,
+              "position": "F",
+              "order": 5
+            }
+          },
+          {
+            "player_id": 18859,
+            "firstname": "Ogochukwu Frank",
+            "lastname": "Onyeka",
+            "birthday": "1998-01-01",
+            "age": 24,
+            "weight": null,
+            "height": 183,
+            "img": "",
+            "country": {
+              "country_id": 86,
+              "name": "Nigeria",
+              "country_code": "ng",
+              "continent": "Africa"
+            },
+            "detailed": {
+              "number": 15,
+              "position": "M",
+              "order": 6
+            }
+          },
+          {
+            "player_id": 3430,
+            "firstname": "Christian Thers",
+            "lastname": "Norgaard",
+            "birthday": "1994-03-10",
+            "age": 28,
+            "weight": 77,
+            "height": 187,
+            "img": "",
+            "country": {
+              "country_id": 38,
+              "name": "Denmark",
+              "country_code": "dk",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 6,
+              "position": "M",
+              "order": 7
+            }
+          },
+          {
+            "player_id": 24817,
+            "firstname": "Vitaly",
+            "lastname": "Janelt",
+            "birthday": "1998-05-10",
+            "age": 24,
+            "weight": 79,
+            "height": 184,
+            "img": "",
+            "country": {
+              "country_id": 48,
+              "name": "Germany",
+              "country_code": "de",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 27,
+              "position": "M",
+              "order": 8
+            }
+          },
+          {
+            "player_id": 3177,
+            "firstname": "Rico Antonio",
+            "lastname": "Henry",
+            "birthday": "1997-07-08",
+            "age": 25,
+            "weight": 66,
+            "height": 170,
+            "img": "",
+            "country": {
+              "country_id": 42,
+              "name": "England",
+              "country_code": "en",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 3,
+              "position": "D",
+              "order": 9
+            }
+          },
+          {
+            "player_id": 3431,
+            "firstname": "Bryan",
+            "lastname": "Mbeumo",
+            "birthday": "1999-08-07",
+            "age": 23,
+            "weight": null,
+            "height": 173,
+            "img": "",
+            "country": {
+              "country_id": 46,
+              "name": "France",
+              "country_code": "fr",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 19,
+              "position": "F",
+              "order": 10
+            }
+          },
+          {
+            "player_id": 3647,
+            "firstname": "Ivan",
+            "lastname": "Toney",
+            "birthday": "1996-03-16",
+            "age": 26,
+            "weight": 70,
+            "height": 179,
+            "img": "",
+            "country": {
+              "country_id": 42,
+              "name": "England",
+              "country_code": "en",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 17,
+              "position": "F",
+              "order": 11
+            }
+          }
+        ]
+      },
+      {
+        "team_id": 2522,
+        "formation": "4-2-3-1",
+        "formation_confirmed": 1,
+        "players": [
+          {
+            "player_id": 2905,
+            "firstname": "Bernd",
+            "lastname": "Leno",
+            "birthday": "1992-03-04",
+            "age": 30,
+            "weight": 83,
+            "height": 190,
+            "img": "",
+            "country": {
+              "country_id": 48,
+              "name": "Germany",
+              "country_code": "de",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 1,
+              "position": "G",
+              "order": 1
+            }
+          },
+          {
+            "player_id": 3381,
+            "firstname": "Calum",
+            "lastname": "Chambers",
+            "birthday": "1995-01-20",
+            "age": 27,
+            "weight": 66,
+            "height": 182,
+            "img": "",
+            "country": {
+              "country_id": 42,
+              "name": "England",
+              "country_code": "en",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 21,
+              "position": "D",
+              "order": 2
+            }
+          },
+          {
+            "player_id": 3293,
+            "firstname": "Benjamin William",
+            "lastname": "White",
+            "birthday": "1997-10-08",
+            "age": 24,
+            "weight": null,
+            "height": 182,
+            "img": "",
+            "country": {
+              "country_id": 42,
+              "name": "England",
+              "country_code": "en",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 4,
+              "position": "D",
+              "order": 3
+            }
+          },
+          {
+            "player_id": 23430,
+            "firstname": "Pablo",
+            "lastname": "Mari Villar",
+            "birthday": "1993-08-31",
+            "age": 29,
+            "weight": 87,
+            "height": 193,
+            "img": "",
+            "country": {
+              "country_id": 113,
+              "name": "Spain",
+              "country_code": "es",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 22,
+              "position": "D",
+              "order": 4
+            }
+          },
+          {
+            "player_id": 3520,
+            "firstname": "Kieran",
+            "lastname": "Tierney",
+            "birthday": null,
+            "age": null,
+            "weight": null,
+            "height": null,
+            "img": "https://cdn.sportdataapi.com/images/soccer/players/50/22738.png",
+            "country": null,
+            "detailed": {
+              "number": 3,
+              "position": "D",
+              "order": 5
+            }
+          },
+          {
+            "player_id": 2021,
+            "firstname": "Albert Mboyo",
+            "lastname": "Sambi Lokonga",
+            "birthday": "1999-10-22",
+            "age": 22,
+            "weight": 69,
+            "height": 183,
+            "img": "https://cdn.sportdataapi.com/images/soccer/players/50/4572.png",
+            "country": {
+              "country_id": 21,
+              "name": "Belgium",
+              "country_code": "be",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 23,
+              "position": "M",
+              "order": 6
+            }
+          },
+          {
+            "player_id": 2911,
+            "firstname": "Granit",
+            "lastname": "Xhaka",
+            "birthday": "1992-09-27",
+            "age": 30,
+            "weight": 82,
+            "height": 183,
+            "img": "",
+            "country": {
+              "country_id": 115,
+              "name": "Switzerland",
+              "country_code": "ch",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 34,
+              "position": "M",
+              "order": 7
+            }
+          },
+          {
+            "player_id": 162,
+            "firstname": "Nicolas",
+            "lastname": "Pepe",
+            "birthday": "1995-05-29",
+            "age": 27,
+            "weight": 73,
+            "height": 183,
+            "img": "",
+            "country": {
+              "country_id": 63,
+              "name": "Ivory Coast",
+              "country_code": "ci",
+              "continent": "Africa"
+            },
+            "detailed": {
+              "number": 19,
+              "position": "F",
+              "order": 8
+            }
+          },
+          {
+            "player_id": 20874,
+            "firstname": "Emile",
+            "lastname": "Smith-Rowe",
+            "birthday": "2000-07-28",
+            "age": 22,
+            "weight": null,
+            "height": 182,
+            "img": "",
+            "country": {
+              "country_id": 42,
+              "name": "England",
+              "country_code": "en",
+              "continent": "Europe"
+            },
+            "detailed": {
+              "number": 10,
+              "position": "F",
+              "order": 9
+            }
+          },
+          {
+            "player_id": 20712,
+            "firstname": "Gabriel Teodoro",
+            "lastname": "Martinelli Silva",
+            "birthday": "2001-06-18",
+            "age": 21,
+            "weight": null,
+            "height": 180,
+            "img": "",
+            "country": {
+              "country_id": 25,
+              "name": "Brazil",
+              "country_code": "br",
+              "continent": "South America"
+            },
+            "detailed": {
+              "number": 35,
+              "position": "F",
+              "order": 10
+            }
+          },
+          {
+            "player_id": 41117,
+            "firstname": "Folarin",
+            "lastname": "Balogun",
+            "birthday": null,
+            "age": null,
+            "weight": null,
+            "height": null,
+            "img": "https://cdn.sportdataapi.com/images/soccer/players/50/22742.png",
+            "country": null,
+            "detailed": {
+              "number": 26,
+              "position": "F",
+              "order": 11
+            }
+          }
+        ]
+      }
+    ],
+    "venue": {
+      "venue_id": 4623,
+      "name": "Brentford Community Stadium",
+      "capacity": 17250,
+      "city": "London",
+      "country_id": 42
+    }
+  }
+}
