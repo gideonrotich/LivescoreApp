@@ -21,12 +21,11 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.livescore.R
 import com.example.livescore.presentation.screens.scorers.ScorersViewModel
-import com.example.livescore.presentation.screens.standings.components.StandingsListItem
 
 @Composable
-fun ScorersScreen(viewModel: ScorersViewModel = hiltViewModel()){
+fun ScorersScreen(viewModel: ScorersViewModel = hiltViewModel()) {
 
-    val scorerstate  = viewModel.state.value
+    val scorerstate = viewModel.state.value
 
     Box(modifier = Modifier.fillMaxSize()) {
         Column(modifier = Modifier.fillMaxSize()) {
@@ -34,7 +33,8 @@ fun ScorersScreen(viewModel: ScorersViewModel = hiltViewModel()){
                 painter = painterResource(id = R.drawable.three), contentDescription = "",
                 modifier = Modifier
                     .height(200.dp)
-                    .fillMaxWidth().fillMaxHeight(), contentScale = ContentScale.Crop
+                    .fillMaxWidth().fillMaxHeight(),
+                contentScale = ContentScale.Crop
             )
 
             Row(
@@ -60,7 +60,6 @@ fun ScorersScreen(viewModel: ScorersViewModel = hiltViewModel()){
                         fontSize = 14.sp
                     )
                 }
-
             }
             LazyColumn() {
                 items(scorerstate.scorer) { scorer ->
@@ -83,14 +82,11 @@ fun ScorersScreen(viewModel: ScorersViewModel = hiltViewModel()){
         }
         if (scorerstate.isLoading) {
             CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center), color = colorResource(
+                modifier = Modifier.align(Alignment.Center),
+                color = colorResource(
                     id = R.color.purple
                 )
             )
         }
-
     }
-
 }
-
-

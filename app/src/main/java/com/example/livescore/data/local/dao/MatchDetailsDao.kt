@@ -5,12 +5,11 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.livescore.data.local.entity.MatchDetailsEntity
-import com.example.livescore.data.local.entity.MatchesEntity
 
 @Dao
 interface MatchDetailsDao {
     @Query("SELECT * FROM match_details")
-    suspend fun getMatchDetails():MatchDetailsEntity
+    suspend fun getMatchDetails(): MatchDetailsEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMatchDetails(list: MatchDetailsEntity)

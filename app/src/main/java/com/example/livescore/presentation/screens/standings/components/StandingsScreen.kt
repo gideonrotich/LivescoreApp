@@ -42,7 +42,8 @@ fun StandingScreen(
         Column {
             SwipeRefresh(
                 state = rememberSwipeRefreshState(isRefreshing = isRefreshing),
-                onRefresh = { viewModel.refresh() }) {
+                onRefresh = { viewModel.refresh() }
+            ) {
 
                 Column() {
 
@@ -50,7 +51,8 @@ fun StandingScreen(
                         painter = painterResource(id = R.drawable.banner), contentDescription = "",
                         modifier = Modifier
                             .height(200.dp)
-                            .fillMaxWidth(), contentScale = ContentScale.FillWidth
+                            .fillMaxWidth(),
+                        contentScale = ContentScale.FillWidth
                     )
 
                     Row(
@@ -103,9 +105,7 @@ fun StandingScreen(
                                 fontSize = 14.sp
                             )
                         }
-
                     }
-
 
                     LazyColumn() {
                         items(state.standings) { standings ->
@@ -114,10 +114,7 @@ fun StandingScreen(
                             )
                         }
                     }
-
                 }
-
-
             }
         }
         if (state.error.isNotBlank()) {
@@ -133,16 +130,11 @@ fun StandingScreen(
         }
         if (state.isLoading) {
             CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center), color = colorResource(
+                modifier = Modifier.align(Alignment.Center),
+                color = colorResource(
                     id = R.color.purple
                 )
             )
         }
     }
 }
-
-
-
-
-
-

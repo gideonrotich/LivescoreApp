@@ -9,7 +9,7 @@ import javax.inject.Inject
 class GetOddsUseCase @Inject constructor(
     private val repository: MatchesRepository
 ) {
-    operator fun invoke(id:String): Flow<Resource<OddsModel>>{
+    operator fun invoke(id: String): Flow<Resource<OddsModel>> {
         return repository.getOdds(id)
     }
 }

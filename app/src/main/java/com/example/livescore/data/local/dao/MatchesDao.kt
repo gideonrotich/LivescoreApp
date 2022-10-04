@@ -9,7 +9,7 @@ import com.example.livescore.data.local.entity.MatchesEntity
 @Dao
 interface MatchesDao {
     @Query("SELECT * FROM matches_table")
-    suspend fun getMatches():List<MatchesEntity>
+    suspend fun getMatches(): List<MatchesEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMatches(list: List<MatchesEntity>)

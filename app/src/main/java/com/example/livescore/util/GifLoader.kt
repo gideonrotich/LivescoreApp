@@ -6,7 +6,6 @@ import coil.ImageLoader
 import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
 
-
 fun Context.gifLoader(): ImageLoader {
     return ImageLoader.Builder(this)
         .components {

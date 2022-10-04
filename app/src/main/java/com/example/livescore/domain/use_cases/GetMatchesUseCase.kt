@@ -9,7 +9,7 @@ import javax.inject.Inject
 class GetMatchesUseCase @Inject constructor(
     private val repository: MatchesRepository
 ) {
-    operator fun invoke():Flow<Resource<List<DataModel>>>{
+    operator fun invoke(): Flow<Resource<List<DataModel>>> {
         return repository.getMatches()
     }
 }

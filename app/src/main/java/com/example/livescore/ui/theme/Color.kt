@@ -7,7 +7,6 @@ val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
-
 val TabColorOne = Color(0xFF562DA0)
 val TabColorTwo = Color(0xFFD50D51)
 
@@ -17,4 +16,3 @@ val DefColor = Color(0f, 0f, 1f, 0.44f)
 val SpAtkColor = Color(1f, 0f, 0.8f, 0.7f)
 val SpDefColor = Color(1f, 0f, 0.8f, 0.7f)
 val SpdColor = Color(0f, 1f, 0.063f, 0.55f)
-

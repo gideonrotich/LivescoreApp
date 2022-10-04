@@ -12,7 +12,7 @@ import retrofit2.http.Query
 
 interface LivescoreApi {
 
-    //get matches
+    // get matches
     @GET(Constants.GET_MATCHES)
     suspend fun getMatches(
         @Query("apikey") apikey: String = Constants.API_KEY_TWO,
@@ -21,32 +21,32 @@ interface LivescoreApi {
         @Query("date_to") dateTo: String = "2022-05-23"
     ): MatchesResponseDto
 
-    //get match details
+    // get match details
     @GET(Constants.GET_MATCH_DETAILS)
     suspend fun getMatchDetails(
         @Path("id")id: String,
         @Query("apikey") apikey: String = Constants.API_KEY_TWO
     ): MatchDetailsDto
 
-    //get league standings
+    // get league standings
     @GET(Constants.GET_STANDINGS)
     suspend fun geStandings(
         @Query("apikey") apikey: String = Constants.API_KEY_TWO,
         @Query("season_id") seasonId: String = Constants.PL_ID_MATCHES,
     ): StandingsResponseDto
 
-    //get match odds
+    // get match odds
     @GET(Constants.GET_ODDS)
     suspend fun getOdds(
-        @Path("id")id:String,
+        @Path("id")id: String,
         @Query("apikey") apikey: String = Constants.API_KEY_TWO,
-        @Query("type")type:String = "prematch",
+        @Query("type")type: String = "prematch",
     ): OddsResponseDto
 
-    //get top scorers
+    // get top scorers
     @GET(Constants.GET_SCORERS)
     suspend fun getScorers(
         @Query("apikey") apikey: String = Constants.API_KEY_TWO,
         @Query("season_id") seasonId: String = Constants.PL_ID_MATCHES
-    ):ScorersResponseDto
+    ): ScorersResponseDto
 }

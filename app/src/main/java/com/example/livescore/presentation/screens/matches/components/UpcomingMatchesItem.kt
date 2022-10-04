@@ -12,12 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color.Companion.Black
-import androidx.compose.ui.graphics.Color.Companion.DarkGray
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -25,7 +23,6 @@ import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
 import com.example.livescore.R
 import com.example.livescore.domain.models.DataModel
-import com.example.livescore.ui.theme.Teal200
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -68,7 +65,6 @@ fun UpcomingMatchesItem(match: DataModel, onItemClicked: (match: DataModel) -> U
                     contentDescription = "",
                     contentScale = ContentScale.Crop
                 )
-
 
                 Spacer(modifier = Modifier.width(10.dp))
                 val month = getMatchDayAndMonth(match.match_start!!)
@@ -113,7 +109,6 @@ fun UpcomingMatchesItem(match: DataModel, onItemClicked: (match: DataModel) -> U
                         fontSize = 15.sp
                     )
                 }
-
             }
         }
     }

@@ -26,28 +26,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.integerResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.rememberImagePainter
 import com.example.livescore.R
 import com.example.livescore.data.remote.dto.matchdetails.Lineup
 import com.example.livescore.data.remote.dto.matchdetails.MatchEvent
-import com.example.livescore.data.remote.dto.matchdetails.MatchStatistic
-import com.example.livescore.data.remote.dto.matchdetails.Player
 import com.example.livescore.domain.models.MatchDetailsModel
 import com.example.livescore.ui.theme.SpAtkColor
-import com.example.livescore.ui.theme.TabColorTwo
-
-
 
 @Composable
 fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
@@ -96,7 +84,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                 .align(Alignment.CenterVertically),
                                             contentDescription = "",
 
-                                            )
+                                        )
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
@@ -114,9 +102,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                 )
                                             }
                                         }
-
                                     }
-
                                 }
                                 if (item.type == "substitution") {
                                     Row(modifier = Modifier.padding(start = 16.dp, top = 8.dp)) {
@@ -149,9 +135,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                             contentDescription = "",
                                                             colorFilter = ColorFilter.tint(Color.White)
                                                         )
-
                                                     }
-
                                                 }
                                             }
 
@@ -176,12 +160,9 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                             contentDescription = "",
                                                             colorFilter = ColorFilter.tint(Color.White)
                                                         )
-
                                                     }
-
                                                 }
                                             }
-
                                         }
                                         Spacer(modifier = Modifier.width(20.dp))
 
@@ -199,8 +180,6 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                 color = Color.Red
                                             )
                                         }
-
-
                                     }
                                 }
 
@@ -235,7 +214,6 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                     .fillMaxSize()
                                                     .background(Color.Yellow)
                                             )
-
                                         }
 
                                         Spacer(modifier = Modifier.width(20.dp))
@@ -282,7 +260,6 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                             fontSize = 14.sp,
                                             modifier = Modifier.align(CenterVertically)
                                         )
-
                                     }
                                 }
 
@@ -320,14 +297,10 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                             fontSize = 14.sp,
                                             modifier = Modifier.align(CenterVertically)
                                         )
-
                                     }
                                 }
-
                             }
-
                         }
-
                     }
 
                     if (item.team_id == two) {
@@ -340,7 +313,6 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                             Column(modifier = Modifier.align(Alignment.End)) {
                                 if (item.type == "goal") {
                                     Row(modifier = Modifier.padding(end = 16.dp, top = 8.dp)) {
-
 
                                         Column(modifier = Modifier.align(Alignment.CenterVertically)) {
                                             Text(
@@ -368,7 +340,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                 .align(Alignment.CenterVertically),
                                             contentDescription = "",
 
-                                            )
+                                        )
 
                                         Spacer(modifier = Modifier.width(4.dp))
 
@@ -378,9 +350,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                             modifier = Modifier.align(Alignment.CenterVertically),
                                             fontSize = 15.sp
                                         )
-
                                     }
-
                                 }
 
                                 if (item.type == "substitution") {
@@ -424,9 +394,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                             contentDescription = "",
                                                             colorFilter = ColorFilter.tint(Color.White)
                                                         )
-
                                                     }
-
                                                 }
                                             }
 
@@ -451,12 +419,9 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                             contentDescription = "",
                                                             colorFilter = ColorFilter.tint(Color.White)
                                                         )
-
                                                     }
-
                                                 }
                                             }
-
                                         }
 
                                         Spacer(modifier = Modifier.width(18.dp))
@@ -467,11 +432,7 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                             modifier = Modifier.align(Alignment.CenterVertically),
                                             fontSize = 15.sp
                                         )
-
-
                                     }
-
-
                                 }
                                 if (item.type == "yellowcard") {
                                     Row(
@@ -489,7 +450,6 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
 
                                         Spacer(modifier = Modifier.width(20.dp))
 
-
                                         Card(
                                             modifier = Modifier
                                                 .align(Alignment.CenterVertically)
@@ -504,7 +464,6 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                                     .fillMaxSize()
                                                     .background(Color.Yellow)
                                             )
-
                                         }
 
                                         Spacer(modifier = Modifier.width(18.dp))
@@ -515,8 +474,6 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                             modifier = Modifier.align(Alignment.CenterVertically),
                                             fontSize = 15.sp
                                         )
-
-
                                     }
                                 }
                                 if (item.type == "injury") {
@@ -554,8 +511,6 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                             modifier = Modifier.align(Alignment.CenterVertically),
                                             fontSize = 15.sp
                                         )
-
-
                                     }
                                 }
                                 if (item.type == "back from injury") {
@@ -593,17 +548,11 @@ fun TabScreenOne(tabName: String, match: List<MatchEvent>, one: Int, two: Int) {
                                             modifier = Modifier.align(Alignment.CenterVertically),
                                             fontSize = 15.sp
                                         )
-
-
                                     }
                                 }
-
                             }
-
                         }
-
                     }
-
                 }
             }
         }
@@ -624,7 +573,6 @@ fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-
 
             LazyRow(
                 modifier = Modifier
@@ -657,9 +605,7 @@ fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
                                                             .align(Alignment.CenterVertically),
                                                         contentDescription = "",
                                                     )
-
                                                 }
-
                                             }
                                         }
                                         Spacer(modifier = Modifier.width(12.dp))
@@ -677,15 +623,11 @@ fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
                                             modifier = Modifier.align(Alignment.CenterVertically),
                                             fontSize = 15.sp
                                         )
-
-
                                     }
-
                                 }
                             }
                         }
                     }
-
 
                     if (item.team_id == two) {
                         LazyColumn(
@@ -700,7 +642,6 @@ fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
                                         .align(End)
                                         .fillMaxSize()
                                 ) {
-
 
                                     Row(modifier = Modifier.padding(top = 16.dp)) {
                                         Card(
@@ -719,9 +660,7 @@ fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
                                                             .align(Alignment.CenterVertically),
                                                         contentDescription = "",
                                                     )
-
                                                 }
-
                                             }
                                         }
                                         Spacer(modifier = Modifier.width(12.dp))
@@ -739,22 +678,15 @@ fun TabScreenTwo(tabName: String, lineup: List<Lineup>, one: Int, two: Int) {
                                             modifier = Modifier.align(Alignment.CenterVertically),
                                             fontSize = 15.sp
                                         )
-
-
                                     }
-
                                 }
                             }
                         }
                     }
-
                 }
             }
-
         }
     }
-
-
 }
 
 @Composable
@@ -767,8 +699,10 @@ fun TabScreenThree(tabName: String, stata: MatchDetailsModel) {
         elevation = 3.dp,
 
     ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Top, modifier = Modifier.fillMaxSize()) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top, modifier = Modifier.fillMaxSize()
+        ) {
             PokemonBaseStats(pokemonInfo = stata)
             Spacer(modifier = Modifier.height(8.dp))
             AttacksAnimation(pokemonInfo = stata)
@@ -789,11 +723,8 @@ fun TabScreenThree(tabName: String, stata: MatchDetailsModel) {
             Spacer(modifier = Modifier.height(8.dp))
             GoalsAnimation(pokemonInfo = stata)
         }
-
-
     }
 }
-
 
 @Composable
 fun PokemonBaseStats(
@@ -830,10 +761,8 @@ fun PokemonBaseStats(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
-
 
 @Composable
 fun PokemonStat(
@@ -927,10 +856,8 @@ fun AttacksAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
-
 
 @Composable
 fun BallSafeAnimation(
@@ -967,7 +894,6 @@ fun BallSafeAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
 
@@ -1006,7 +932,6 @@ fun CornersAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
 
@@ -1045,7 +970,6 @@ fun DangerousAttacksAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
 
@@ -1084,7 +1008,6 @@ fun FoulsAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
 
@@ -1123,10 +1046,8 @@ fun FreeKickAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
-
 
 @Composable
 fun GoalAttemptsAnimation(
@@ -1163,7 +1084,6 @@ fun GoalAttemptsAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
 
@@ -1202,7 +1122,6 @@ fun GoalKickAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
 
@@ -1241,7 +1160,5 @@ fun GoalsAnimation(
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
-
     }
 }
-

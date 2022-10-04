@@ -16,7 +16,7 @@ class Converters(
     private val gson: Gson
 ) {
 
-    //Away team converter
+    // Away team converter
     @TypeConverter
     fun fromTest(str: AwayTeam): String? {
         return Gson().toJson(str)
@@ -27,8 +27,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-
-    //Group converter
+    // Group converter
     @TypeConverter
     fun fromGroup(strone: Group): String? {
         return Gson().toJson(strone)
@@ -39,7 +38,7 @@ class Converters(
         return Gson().fromJson(strtwo, object : TypeToken<String>() {}.type)
     }
 
-    //home team
+    // home team
     @TypeConverter
     fun fromHometeam(str: HomeTeam): String {
         return Gson().toJson(str)
@@ -50,7 +49,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //round
+    // round
     @TypeConverter
     fun fromRound(str: Round): String {
         return Gson().toJson(str)
@@ -61,7 +60,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //stage
+    // stage
     @TypeConverter
     fun fromStage(str: Stage): String {
         return Gson().toJson(str)
@@ -72,7 +71,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //stats
+    // stats
     @TypeConverter
     fun fromStatss(str: com.example.livescore.data.remote.dto.matches.Stats): String {
         return Gson().toJson(str)
@@ -83,7 +82,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromVenue(str: Venue): String {
         return Gson().toJson(str)
@@ -94,7 +93,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromAwa(str: com.example.livescore.data.remote.dto.matchdetails.AwayTeam): String {
         return Gson().toJson(str)
@@ -105,7 +104,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromGrou(str: com.example.livescore.data.remote.dto.matchdetails.Group): String {
         return Gson().toJson(str)
@@ -116,7 +115,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromHome(str: com.example.livescore.data.remote.dto.matchdetails.HomeTeam): String {
         return Gson().toJson(str)
@@ -127,7 +126,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromLine(str: List<Lineup>): String {
         return Gson().toJson(str)
@@ -138,7 +137,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<List<String>>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromMatch(str: List<MatchEvent>): String {
         return Gson().toJson(str)
@@ -149,7 +148,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<List<String>>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromStatistic(str: List<MatchStatistic>): String {
         return Gson().toJson(str)
@@ -160,8 +159,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<List<String>>() {}.type)
     }
 
-
-    //venue
+    // venue
     @TypeConverter
     fun fromReferee(str: com.example.livescore.data.remote.dto.matchdetails.Round): String {
         return Gson().toJson(str)
@@ -172,7 +170,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromStagee(str: com.example.livescore.data.remote.dto.matchdetails.Stage): String {
         return Gson().toJson(str)
@@ -183,7 +181,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-    //venue
+    // venue
     @TypeConverter
     fun fromStatw(str: com.example.livescore.data.remote.dto.matchdetails.Stats): String {
         return Gson().toJson(str)
@@ -194,8 +192,7 @@ class Converters(
         return Gson().fromJson(str, object : TypeToken<String>() {}.type)
     }
 
-
-    //venue
+    // venue
     @TypeConverter
     fun fromVenu(str: com.example.livescore.data.remote.dto.matchdetails.Venue): String {
         return Gson().toJson(str)

@@ -7,9 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,14 +18,12 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import coil.request.ImageRequest
@@ -91,12 +87,11 @@ fun MatchesScreen(
 
             LazyColumn(modifier = Modifier.fillMaxWidth()) {
                 items(matchesState.matches) { matches ->
-                    UpcomingMatchesItem(match = matches,onItemClicked = {
+                    UpcomingMatchesItem(match = matches, onItemClicked = {
                         navController.navigate(Screen.MatchDetailsScreen.route + "/${matches.match_id}")
                     })
                 }
             }
-
         }
         if (matchesState.error.isNotBlank()) {
             Text(
@@ -110,9 +105,12 @@ fun MatchesScreen(
             )
         }
         if (matchesState.isLoading) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center), color = colorResource(
-                id = R.color.purple
-            ))
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+                color = colorResource(
+                    id = R.color.purple
+                )
+            )
         }
     }
 }
@@ -162,7 +160,6 @@ fun ChipComponent(filter: FilterContent) {
             Spacer(modifier = Modifier.width(6.dp))
             Text(text = filterText, modifier = Modifier.align(Alignment.CenterVertically))
         }
-
     }
 }
 
@@ -175,7 +172,8 @@ fun LoadingGif(
         painter = rememberAsyncImagePainter(
             ImageRequest.Builder(context).data(data = R.drawable.bouncel).apply(block = {
                 size(Size.ORIGINAL)
-            }).build(), imageLoader = context.gifLoader()
+            }).build(),
+            imageLoader = context.gifLoader()
         ),
         contentDescription = null,
         modifier = modifier

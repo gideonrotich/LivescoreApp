@@ -15,17 +15,17 @@ import javax.inject.Inject
 @HiltViewModel
 class MatchesViewModel @Inject constructor(
     private val getMatchesUseCase: GetMatchesUseCase
-):ViewModel() {
+) : ViewModel() {
     private val _state = mutableStateOf(MatchesListState())
-    val state:State<MatchesListState> = _state
+    val state: State<MatchesListState> = _state
 
     init {
         getAllMatches()
     }
 
-     fun getAllMatches(){
+    fun getAllMatches() {
         getMatchesUseCase().onEach { result ->
-            when (result){
+            when (result) {
                 is Resource.Success -> {
                     _state.value = MatchesListState(matches = result.data ?: emptyList())
                 }

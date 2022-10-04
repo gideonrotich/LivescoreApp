@@ -26,12 +26,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberImagePainter
 import com.example.livescore.data.remote.dto.matchdetails.Lineup
 import com.example.livescore.data.remote.dto.matchdetails.MatchEvent
-import com.example.livescore.data.remote.dto.odds.Bookmaker
 import com.example.livescore.domain.models.MatchDetailsModel
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenOne
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenThree
 import com.example.livescore.presentation.screens.matchdetails.components.TabScreenTwo
-import com.example.livescore.presentation.screens.odds.OddsScreen
 import com.google.accompanist.pager.*
 import kotlinx.coroutines.launch
 
@@ -45,7 +43,6 @@ fun MatchDetailsScreen(
 
     Column(modifier = Modifier.fillMaxSize()) {
         matchesState.matchdetails?.let { match ->
-
 
             Box(
                 modifier = Modifier
@@ -177,7 +174,6 @@ fun MatchDetailsScreen(
                                                 fontWeight = FontWeight.Bold,
                                                 modifier = Modifier.padding(top = 10.dp)
                                             )
-
                                         }
 
                                         Row(
@@ -253,10 +249,7 @@ fun MatchDetailsScreen(
                         }
                     }
                 }
-
-
             }
-
 
             TabScreen(
                 match.match_events!!,
@@ -266,8 +259,6 @@ fun MatchDetailsScreen(
                 match,
                 match.match_id.toString(),
             )
-
-
         }
 
         if (matchesState.error.isNotBlank()) {
@@ -290,9 +281,7 @@ fun MatchDetailsScreen(
             )
         }
     }
-
 }
-
 
 @ExperimentalPagerApi
 @Composable
@@ -308,13 +297,10 @@ fun TabScreen(
 
     Column(
         modifier = Modifier.background(Color.White)
-    )
-    {
+    ) {
         Tabs(pagerState = pagerState)
         TabsContent(pagerState = pagerState, match, one, two, lineup, masa, matchId)
-
     }
-
 }
 
 @ExperimentalPagerApi
@@ -324,7 +310,8 @@ fun Tabs(pagerState: PagerState) {
     val list = listOf("Events", "Lineup", "Stats")
 
     val scope = rememberCoroutineScope()
-    TabRow(selectedTabIndex = pagerState.currentPage,
+    TabRow(
+        selectedTabIndex = pagerState.currentPage,
         backgroundColor = colorResource(id = com.example.livescore.R.color.purple),
         contentColor = Color.White,
         divider = {
@@ -341,7 +328,6 @@ fun Tabs(pagerState: PagerState) {
                 height = 3.dp,
                 color = Color.Red
             )
-
         }
     ) {
         list.forEachIndexed { index, _ ->
@@ -359,14 +345,10 @@ fun Tabs(pagerState: PagerState) {
                     }
                 },
 
-                )
+            )
         }
-
     }
-
-
 }
-
 
 @ExperimentalPagerApi
 @Composable
@@ -395,10 +377,6 @@ fun TabsContent(
                 two = two
             )
             2 -> TabScreenThree(tabName = "This is a stats tab Layout", stata = masa)
-
-
         }
-
     }
-
 }

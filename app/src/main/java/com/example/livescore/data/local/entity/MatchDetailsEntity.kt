@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.example.livescore.data.remote.dto.matchdetails.*
 
 @Entity(tableName = "match_details")
-data class MatchDetailsEntity (
+data class MatchDetailsEntity(
     val away_team: AwayTeam,
     val group: Group,
     val home_team: HomeTeam,

@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.livescore.domain.use_cases.GetScorersUseCase
-import com.example.livescore.presentation.screens.standings.StandingsListState
 import com.example.livescore.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -15,18 +14,18 @@ import javax.inject.Inject
 @HiltViewModel
 class ScorersViewModel @Inject constructor(
     private val getScorersUseCase: GetScorersUseCase
-) : ViewModel(){
+) : ViewModel() {
 
     private val _state = mutableStateOf(ScorersDataState())
-    val state:State<ScorersDataState> = _state
+    val state: State<ScorersDataState> = _state
 
     init {
         getScorers()
     }
 
-    private fun getScorers(){
+    private fun getScorers() {
         getScorersUseCase().onEach { result ->
-            when(result){
+            when (result) {
                 is Resource.Success -> {
                     _state.value = ScorersDataState(scorer = result.data ?: emptyList())
                 }

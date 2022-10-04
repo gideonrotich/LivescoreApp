@@ -15,12 +15,7 @@
  */
 package com.example.livescore.presentation
 
-import androidx.annotation.StringRes
-import com.example.livescore.R
-
-
-
-sealed class Screen(val route:String){
-    object MatchScreen: Screen("match_screen")
-    object MatchDetailsScreen: Screen("match_details_screen")
+sealed class Screen(val route: String) {
+    object MatchScreen : Screen("match_screen")
+    object MatchDetailsScreen : Screen("match_details_screen")
 }

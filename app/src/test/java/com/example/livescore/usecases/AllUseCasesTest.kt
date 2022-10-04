@@ -27,10 +27,8 @@ class AllUseCasesTest {
             override fun getMatchDetails(id: String): Flow<Resource<MatchDetailsModel>> = flowReturnOne
             override fun getOdds(id: String): Flow<Resource<OddsModel>> = flowReturnThree
             override fun getScorers(): Flow<Resource<List<ScorersModel>>> = flowReturnFour
-
         }
     }
-
 
     @Test
     fun `Get matches starts with Loading RETURNS Resource Loading`() = runBlocking {
@@ -40,23 +38,28 @@ class AllUseCasesTest {
         val odds = mockk<OddsModel>()
         val scorer = mockk<List<ScorersModel>>()
 
-        val matchesRepository = mockMatchesRepository(flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(matches))
-
-        }, flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(matchesdetails))
-        }, flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(standings))
-        }, flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(odds))
-        }, flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(scorer))
-        })
+        val matchesRepository = mockMatchesRepository(
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(matches))
+            },
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(matchesdetails))
+            },
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(standings))
+            },
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(odds))
+            },
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(scorer))
+            }
+        )
 
         val matchresult = GetMatchesUseCase(matchesRepository).invoke().first()
         assert((matchresult is Resource.Loading))
@@ -72,9 +75,7 @@ class AllUseCasesTest {
 
         val scorerresult = GetScorersUseCase(matchesRepository).invoke().first()
         assert((scorerresult is Resource.Loading))
-
     }
-
 
     @Test
     fun `get matches success result RETURNS Resource + Data`() = runBlocking {
@@ -84,23 +85,28 @@ class AllUseCasesTest {
         val odds = mockk<OddsModel>()
         val scorer = mockk<List<ScorersModel>>()
 
-        val matchesRepository = mockMatchesRepository(flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(matches))
-
-        }, flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(matchesdetails))
-        }, flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(standings))
-        }, flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(odds))
-        }, flow {
-            emit(Resource.Loading())
-            emit(Resource.Success(scorer))
-        })
+        val matchesRepository = mockMatchesRepository(
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(matches))
+            },
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(matchesdetails))
+            },
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(standings))
+            },
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(odds))
+            },
+            flow {
+                emit(Resource.Loading())
+                emit(Resource.Success(scorer))
+            }
+        )
 
         val matchresult = GetMatchesUseCase(matchesRepository).invoke().last()
         assert(matchresult is Resource.Success && (matchresult.data ?: false) != emptyList<DataModel>())
@@ -126,19 +132,23 @@ class AllUseCasesTest {
         val odds = mockk<OddsModel>()
         val scorer = mockk<List<ScorersModel>>()
 
-        val matchesRepository = mockMatchesRepository(flow {
-            emit(Resource.Error("Error getting users followers",matches))
-
-        }, flow {
-            emit(Resource.Error("Error getting users followers",matchesdetails))
-        }, flow {
-            emit(Resource.Error("Error getting users followers",standings))
-        }, flow {
-            emit(Resource.Error("Error getting users followers",odds))
-        }, flow {
-            emit(Resource.Error("Error getting users",scorer))
-
-        })
+        val matchesRepository = mockMatchesRepository(
+            flow {
+                emit(Resource.Error("Error getting users followers", matches))
+            },
+            flow {
+                emit(Resource.Error("Error getting users followers", matchesdetails))
+            },
+            flow {
+                emit(Resource.Error("Error getting users followers", standings))
+            },
+            flow {
+                emit(Resource.Error("Error getting users followers", odds))
+            },
+            flow {
+                emit(Resource.Error("Error getting users", scorer))
+            }
+        )
 
         val matchresult = GetMatchesUseCase(matchesRepository).invoke().last()
         assert(matchresult is Resource.Error && matchresult.message == "Error getting matches")

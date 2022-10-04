@@ -51,13 +51,13 @@ object AppModule {
     @Provides
     @Singleton
     fun provideLIvescoreRepository(
-        livescoreApi:LivescoreApi,
+        livescoreApi: LivescoreApi,
         livescoreDatabase: LivescoreDatabase
-    ):MatchesRepository{
-            return MatchesRepositoryImpl(
+    ): MatchesRepository {
+        return MatchesRepositoryImpl(
             livescoreApi = livescoreApi,
             matchesDao = livescoreDatabase.MatchesDao(),
-                matchDetailsDao = livescoreDatabase.MatchDetailsDao()
+            matchDetailsDao = livescoreDatabase.MatchDetailsDao()
         )
     }
 
@@ -89,5 +89,4 @@ object AppModule {
             .readTimeout(15, TimeUnit.SECONDS)
         return okHttpClient.build()
     }
-
 }

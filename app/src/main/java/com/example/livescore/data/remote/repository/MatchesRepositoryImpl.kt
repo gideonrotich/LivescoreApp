@@ -51,7 +51,6 @@ class MatchesRepositoryImpl(
         emit(Resource.Loading())
 
         try {
-
         } catch (exception: IOException) {
             emit(
                 Resource.Error(
@@ -94,16 +93,13 @@ class MatchesRepositoryImpl(
         }
         val allMatches = livescoreApi.getMatchDetails(id).data.toEntity()
         emit(Resource.Success(allMatches))
-
     }
 
-
-    //used to get the match odds
-    override fun getOdds(id: String): Flow<Resource<OddsModel>> = flow{
+    // used to get the match odds
+    override fun getOdds(id: String): Flow<Resource<OddsModel>> = flow {
         emit(Resource.Loading())
 
         try {
-
         } catch (exception: IOException) {
             emit(
                 Resource.Error(
@@ -125,7 +121,6 @@ class MatchesRepositoryImpl(
         emit(Resource.Loading())
 
         try {
-
         } catch (exception: IOException) {
             emit(
                 Resource.Error(

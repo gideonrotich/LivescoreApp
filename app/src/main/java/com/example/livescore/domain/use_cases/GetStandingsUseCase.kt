@@ -9,7 +9,7 @@ import javax.inject.Inject
 class GetStandingsUseCase @Inject constructor(
     private val repository: MatchesRepository
 ) {
-    operator fun invoke():Flow<Resource<List<StandingsModel>>>{
+    operator fun invoke(): Flow<Resource<List<StandingsModel>>> {
         return repository.getStandings()
     }
 }

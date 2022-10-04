@@ -1,10 +1,10 @@
 package com.example.livescore.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.compose.composable
 import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import com.example.livescore.presentation.Screen
 import com.example.livescore.presentation.screens.matchdetails.MatchDetailsScreen
 import com.example.livescore.presentation.screens.matches.MatchesScreen

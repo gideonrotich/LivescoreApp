@@ -3,9 +3,7 @@ package com.example.livescore.local
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
-import androidx.room.TypeConverter
 import androidx.test.core.app.ApplicationProvider
-import com.example.livescore.data.local.converters.Converters
 import com.example.livescore.data.local.dao.MatchesDao
 import com.example.livescore.data.local.db.LivescoreDatabase
 import com.example.resources.fakeMatch
@@ -24,23 +22,22 @@ import kotlin.jvm.Throws
 
 @ExperimentalCoroutinesApi
 @RunWith(RobolectricTestRunner::class)
-@Config(manifest=Config.NONE)
+@Config(manifest = Config.NONE)
 class MatchesDaoTest {
-    private lateinit var database:LivescoreDatabase
+    private lateinit var database: LivescoreDatabase
     private lateinit var matchesDao: MatchesDao
 
     @get:Rule
     val rule = InstantTaskExecutorRule()
 
     @Before
-    fun Setup(){
+    fun Setup() {
 
         val context = ApplicationProvider.getApplicationContext<Context>()
-        database = Room.inMemoryDatabaseBuilder(context,LivescoreDatabase::class.java)
+        database = Room.inMemoryDatabaseBuilder(context, LivescoreDatabase::class.java)
             .allowMainThreadQueries()
             .build()
         matchesDao = database.MatchesDao()
-
     }
 
     @Test
@@ -65,7 +62,7 @@ class MatchesDaoTest {
 
     @After
     @Throws(IOException::class)
-    fun tearDown(){
+    fun tearDown() {
         database.clearAllTables()
         database.close()
     }

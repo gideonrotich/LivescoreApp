@@ -13,7 +13,6 @@ import org.hamcrest.CoreMatchers
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import retrofit2.HttpException
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.InputStream
@@ -24,7 +23,6 @@ class LivescoreApiTest {
     private var context: Context? = null
     private var mockWebServer = MockWebServer()
     private lateinit var livescoreApi: LivescoreApi
-
 
     @Before
     fun Setup() {
@@ -55,7 +53,6 @@ class LivescoreApiTest {
             .setResponseCode(HttpURLConnection.HTTP_OK)
             .setBody(String(jsonBytes))
         mockWebServer.enqueue(response)
-
     }
 
     @After

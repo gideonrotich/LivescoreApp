@@ -8,7 +8,6 @@ import androidx.compose.material.Card
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.Composable
@@ -20,7 +19,6 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.example.livescore.domain.models.StandingsModel
 
@@ -94,11 +92,9 @@ fun StandingsListItem(standings: StandingsModel) {
                             .background(Color.LightGray)
                             .padding()
                     ) {
-
                     }
                 }
             }
-
 
             Spacer(modifier = Modifier.width(6.dp))
 
@@ -159,10 +155,7 @@ fun StandingsListItem(standings: StandingsModel) {
         Spacer(modifier = Modifier.height(12.dp))
 
         Divider(color = Color.LightGray, thickness = 0.4.dp)
-
     }
-
-
 }
 
 fun TeamConverter(standings: StandingsModel): String {
@@ -214,10 +207,8 @@ fun getTeamLogo(standings: StandingsModel): String {
         2517 -> "https://cdn.sportdataapi.com/images/soccer/teams/100/11.png"
         2510 -> "https://cdn.sportdataapi.com/images/soccer/teams/100/2.png"
 
-
         else -> "No team logo"
     }.toString()
-
 }
 
 fun PosConverter(standings: StandingsModel): String {

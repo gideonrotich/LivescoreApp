@@ -17,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class StandingsViewModel @Inject constructor(
     private val getStandingsUseCase: GetStandingsUseCase
-): ViewModel() {
+) : ViewModel() {
     private val _state = mutableStateOf(StandingsListState())
     val state: State<StandingsListState> = _state
 
@@ -36,9 +36,9 @@ class StandingsViewModel @Inject constructor(
         }
     }
 
-    private fun getStandings(){
+    private fun getStandings() {
         getStandingsUseCase().onEach { result ->
-            when (result){
+            when (result) {
                 is Resource.Success -> {
                     _state.value = StandingsListState(standings = result.data ?: emptyList())
                 }

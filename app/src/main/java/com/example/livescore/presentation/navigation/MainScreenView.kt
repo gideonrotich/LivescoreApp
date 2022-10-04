@@ -13,7 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.livescore.R
 
 @Composable
-fun MainScreenView(){
+fun MainScreenView() {
     val navController = rememberNavController()
     Scaffold(
         bottomBar = { BottomNavigation(navController = navController) }
@@ -39,8 +39,12 @@ fun BottomNavigation(navController: NavController) {
         items.forEach { item ->
             BottomNavigationItem(
                 icon = { Icon(painterResource(id = item.icon), contentDescription = item.title) },
-                label = { Text(text = item.title,
-                    fontSize = 9.sp) },
+                label = {
+                    Text(
+                        text = item.title,
+                        fontSize = 9.sp
+                    )
+                },
                 selectedContentColor = Color.White,
                 unselectedContentColor = Color.White.copy(0.4f),
                 alwaysShowLabel = true,
@@ -61,4 +65,3 @@ fun BottomNavigation(navController: NavController) {
         }
     }
 }
-

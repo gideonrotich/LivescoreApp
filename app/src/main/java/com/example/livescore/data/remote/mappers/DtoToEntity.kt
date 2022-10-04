@@ -4,21 +4,19 @@ import com.example.livescore.data.remote.dto.matches.Data
 import com.example.livescore.data.remote.dto.standings.Standing
 import com.example.livescore.domain.models.*
 
-internal fun Standing.toEntity():StandingsModel {
+internal fun Standing.toEntity(): StandingsModel {
     return StandingsModel(away, home, overall, points, position, result, status, team_id)
-
 }
 
-internal fun com.example.livescore.data.remote.dto.scorers.Data.toEntity():ScorersModel{
+internal fun com.example.livescore.data.remote.dto.scorers.Data.toEntity(): ScorersModel {
     return ScorersModel(goals, league_id, matches_played, minutes_played, penalties, player, pos, season_id, substituted_in, team)
 }
 
-internal fun com.example.livescore.data.remote.dto.odds.Data.toEntity():OddsModel{
-    return OddsModel(FullTimeResult,AsianHandicap,OverUnder)
+internal fun com.example.livescore.data.remote.dto.odds.Data.toEntity(): OddsModel {
+    return OddsModel(FullTimeResult, AsianHandicap, OverUnder)
 }
 
-
-internal fun Data.toEntity():DataModel{
+internal fun Data.toEntity(): DataModel {
     return DataModel(
         this.away_team,
         this.group,
@@ -39,9 +37,8 @@ internal fun Data.toEntity():DataModel{
     )
 }
 
-internal fun com.example.livescore.data.remote.dto.matchdetails.Data.toEntity():MatchDetailsModel{
+internal fun com.example.livescore.data.remote.dto.matchdetails.Data.toEntity(): MatchDetailsModel {
     return MatchDetailsModel(
         away_team, group, home_team, league_id, lineups, match_events, match_id, match_start, match_start_iso, match_statistics, minute, referee_id, round, season_id, stage, stats, status, status_code, venue
     )
 }
-

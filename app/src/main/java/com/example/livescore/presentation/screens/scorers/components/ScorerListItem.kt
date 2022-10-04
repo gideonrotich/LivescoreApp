@@ -1,32 +1,22 @@
 package com.example.livescore.presentation.screens.scorers.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
 import com.example.livescore.domain.models.ScorersModel
-import com.example.livescore.domain.models.StandingsModel
-import com.example.livescore.presentation.screens.standings.components.PosConverter
-import com.example.livescore.presentation.screens.standings.components.TeamConverter
 import com.example.livescore.presentation.screens.standings.components.getTeamLogo
 
 @Composable
-fun ScorerListItem(scorer:ScorersModel){
+fun ScorerListItem(scorer: ScorersModel) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Row(
             modifier = Modifier
@@ -77,15 +67,12 @@ fun ScorerListItem(scorer:ScorersModel){
                 modifier = Modifier.align(Alignment.CenterVertically)
             )
             Spacer(modifier = Modifier.width(20.dp))
-
         }
         Spacer(modifier = Modifier.height(12.dp))
 
         Divider(color = Color.LightGray, thickness = 0.4.dp)
-
     }
 }
-
 
 fun getTeamLogo(standings: ScorersModel): String {
     return when (standings.team.team_id) {
@@ -110,8 +97,6 @@ fun getTeamLogo(standings: ScorersModel): String {
         2517 -> "https://cdn.sportdataapi.com/images/soccer/teams/100/11.png"
         2510 -> "https://cdn.sportdataapi.com/images/soccer/teams/100/2.png"
 
-
         else -> "No team logo"
     }.toString()
-
 }
