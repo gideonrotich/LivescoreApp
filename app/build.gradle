@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-parcelize'
+    id "org.jlleitschuh.gradle.ktlint-idea"
+
 }
 
 android {
@@ -38,6 +40,10 @@ android {
     buildFeatures {
         compose true
     }
+    configurations {
+        ktlint
+    }
+
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
@@ -76,6 +82,8 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
     kapt "androidx.hilt:hilt-compiler:1.0.0"
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-alpha03'
+
+
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
