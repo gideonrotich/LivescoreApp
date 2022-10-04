@@ -56,7 +56,6 @@ class LivescoreApiTest {
             .setBody(String(jsonBytes))
         mockWebServer.enqueue(response)
 
-
     }
 
     @After
