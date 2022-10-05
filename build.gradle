@@ -16,6 +16,7 @@ buildscript {
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
         classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlintPluginVersion"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.1"
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -31,12 +32,21 @@ plugins {
 }
 
 apply plugin: "io.gitlab.arturbosch.detekt"
-detekt {
-    config = files("${project.rootDir}/detekt.yml")
-    parallel = true
-    buildUponDefaultConfig = true
-}
 
+detekt {
+    toolVersion = "1.18.1"
+    input = files("src/main/java")
+    config = files("../config/detekt/detekt.yml")
+    autoCorrect = true
+    reports {
+        xml {
+            enabled = true
+        }
+        html {
+            enabled = true
+        }
+    }
+}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
