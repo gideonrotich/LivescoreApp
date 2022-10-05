@@ -6,6 +6,27 @@ plugins {
     id 'kotlin-parcelize'
     id "org.jlleitschuh.gradle.ktlint"
     id "io.gitlab.arturbosch.detekt"
+    id "com.diffplug.spotless"
+    id 'jacoco'
+}
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories.setFrom(files([mainSrc]))
+    classDirectories.setFrom(files([debugTree]))
+    executionData.setFrom(fileTree(dir: "$buildDir", includes: [
+            "jacoco/testDebugUnitTest.exec",
+            "outputs/code-coverage/connected/*coverage.ec"
+    ]))
 }
 
 android {
@@ -24,7 +45,20 @@ android {
         }
     }
 
+    testOptions {
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+                excludes = ['jdk.internal.*']
+            }
+        }
+        unitTests.returnDefaultValues = true
+    }
+
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -75,6 +109,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
 
+    //detect static analysis
     detekt "io.gitlab.arturbosch.detekt:detekt-formatting:1.18.1"
     detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.18.1")
 
@@ -125,14 +160,14 @@ dependencies {
     testImplementation "io.mockk:mockk:1.12.7"
     testImplementation 'org.mockito:mockito-core:3.11.2'
     androidTestImplementation 'org.mockito:mockito-android:3.10.0'
-    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.42'
     kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.38.1'
     testImplementation 'junit:junit:4.13.2'
     testImplementation "androidx.test:runner:1.4.0"
     testImplementation "com.google.truth:truth:1.1.3"
     testImplementation 'androidx.test:core-ktx:1.4.0'
     testImplementation "org.robolectric:robolectric:4.5.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
     testImplementation "androidx.arch.core:core-testing:2.1.0"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

@@ -2,6 +2,7 @@ buildscript {
     ext {
         compose_version = '1.1.0'
         ktlintPluginVersion = "11.0.0"
+        ext.jacocoVersion = '0.8.4'
 
     }
     repositories {
@@ -16,7 +17,8 @@ buildscript {
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
         classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlintPluginVersion"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.1"
-
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:6.9.1"
+        classpath "org.jacoco:org.jacoco.core:$jacocoVersion"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -28,10 +30,14 @@ plugins {
     id 'com.android.application' version '7.2.0' apply false
     id 'com.android.library' version '7.2.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+    id 'com.diffplug.spotless' version '5.0.0'
+
 
 }
 
 apply plugin: "io.gitlab.arturbosch.detekt"
+apply from: "$project.rootDir/spotless.gradle"
+
 
 detekt {
     toolVersion = "1.18.1"
@@ -48,6 +54,6 @@ detekt {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}
