@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>ComplexMethod:ScorerListItem.kt$fun getTeamLogo(standings: ScorersModel): String</ID>
+    <ID>ComplexMethod:StandingsListItem.kt$fun PosConverter(standings: StandingsModel): String</ID>
+    <ID>ComplexMethod:StandingsListItem.kt$fun TeamConverter(standings: StandingsModel): String</ID>
+    <ID>ComplexMethod:StandingsListItem.kt$fun getTeamLogo(standings: StandingsModel): String</ID>
+    <ID>ComplexMethod:TabContentDetails.kt$@Composable fun TabScreenOne(tabName: String, match: List&lt;MatchEvent>, one: Int, two: Int)</ID>
+    <ID>ConstructorParameterNaming:Away.kt$Away$val games_played: Int</ID>
+    <ID>ConstructorParameterNaming:Away.kt$Away$val goals_against: Int</ID>
+    <ID>ConstructorParameterNaming:Away.kt$Away$val goals_diff: Int</ID>
+    <ID>ConstructorParameterNaming:Away.kt$Away$val goals_scored: Int</ID>
+    <ID>ConstructorParameterNaming:AwayTeam.kt$AwayTeam$val common_name: String</ID>
+    <ID>ConstructorParameterNaming:AwayTeam.kt$AwayTeam$val common_name: String?</ID>
+    <ID>ConstructorParameterNaming:AwayTeam.kt$AwayTeam$val short_code: String</ID>
+    <ID>ConstructorParameterNaming:AwayTeam.kt$AwayTeam$val short_code: String?</ID>
+    <ID>ConstructorParameterNaming:AwayTeam.kt$AwayTeam$val team_id: Int</ID>
+    <ID>ConstructorParameterNaming:AwayTeam.kt$AwayTeam$val team_id: Int?</ID>
+    <ID>ConstructorParameterNaming:Bookmaker.kt$Bookmaker$val bookmaker_id: Int</ID>
+    <ID>ConstructorParameterNaming:Bookmaker.kt$Bookmaker$val bookmaker_name: String</ID>
+    <ID>ConstructorParameterNaming:Bookmaker.kt$Bookmaker$val last_updated: String</ID>
+    <ID>ConstructorParameterNaming:Bookmaker.kt$Bookmaker$val odds_data: OddsData</ID>
+    <ID>ConstructorParameterNaming:BookmakerX.kt$BookmakerX$val bookmaker_id: Int</ID>
+    <ID>ConstructorParameterNaming:BookmakerX.kt$BookmakerX$val bookmaker_name: String</ID>
+    <ID>ConstructorParameterNaming:BookmakerX.kt$BookmakerX$val last_updated: String</ID>
+    <ID>ConstructorParameterNaming:BookmakerX.kt$BookmakerX$val odds_data: OddsDataX</ID>
+    <ID>ConstructorParameterNaming:BookmakerXX.kt$BookmakerXX$val bookmaker_id: Int</ID>
+    <ID>ConstructorParameterNaming:BookmakerXX.kt$BookmakerXX$val bookmaker_name: String</ID>
+    <ID>ConstructorParameterNaming:BookmakerXX.kt$BookmakerXX$val last_updated: String</ID>
+    <ID>ConstructorParameterNaming:BookmakerXX.kt$BookmakerXX$val odds_data: OddsDataXX</ID>
+    <ID>ConstructorParameterNaming:BottomNavItem.kt$BottomNavItem$var screen_route: String</ID>
+    <ID>ConstructorParameterNaming:Country.kt$Country$val country_code: String</ID>
+    <ID>ConstructorParameterNaming:Country.kt$Country$val country_id: Int</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val AsianHandicap: AsianHandicap</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val FullTimeResult: X2FullTimeResult</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val OverUnder: OverUnderGoalLine</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val away_team: AwayTeam</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val has_groups: Int</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val home_team: HomeTeam</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val league_id: Int</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val match_events: List&lt;MatchEvent></ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val match_id: Int</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val match_start: String</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val match_start_iso: String</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val match_statistics: List&lt;MatchStatistic></ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val matches_played: Int</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val minutes_played: Int</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val referee_id: Any</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val referee_id: String</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val season_id: Int</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val status_code: Int</ID>
+    <ID>ConstructorParameterNaming:Data.kt$Data$val substituted_in: Int</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val away_team: AwayTeam?</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val home_team: HomeTeam?</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val league_id: Int?</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val match_id: Int?</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val match_start: String?</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val match_start_iso: String?</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val referee_id: Any?</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val season_id: Int?</ID>
+    <ID>ConstructorParameterNaming:DataModel.kt$DataModel$val status_code: Int?</ID>
+    <ID>ConstructorParameterNaming:Group.kt$Group$val group_id: Int</ID>
+    <ID>ConstructorParameterNaming:Group.kt$Group$val group_id: Int?</ID>
+    <ID>ConstructorParameterNaming:Group.kt$Group$val group_name: String</ID>
+    <ID>ConstructorParameterNaming:Group.kt$Group$val group_name: String?</ID>
+    <ID>ConstructorParameterNaming:Home.kt$Home$val games_played: Int</ID>
+    <ID>ConstructorParameterNaming:Home.kt$Home$val goals_against: Int</ID>
+    <ID>ConstructorParameterNaming:Home.kt$Home$val goals_diff: Int</ID>
+    <ID>ConstructorParameterNaming:Home.kt$Home$val goals_scored: Int</ID>
+    <ID>ConstructorParameterNaming:HomeTeam.kt$HomeTeam$val common_name: String</ID>
+    <ID>ConstructorParameterNaming:HomeTeam.kt$HomeTeam$val short_code: String</ID>
+    <ID>ConstructorParameterNaming:HomeTeam.kt$HomeTeam$val team_id: Int</ID>
+    <ID>ConstructorParameterNaming:Lineup.kt$Lineup$val formation_confirmed: Int</ID>
+    <ID>ConstructorParameterNaming:Lineup.kt$Lineup$val team_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$@PrimaryKey(autoGenerate = false) val match_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val away_team: AwayTeam</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val home_team: HomeTeam</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val league_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val match_events: List&lt;MatchEvent></ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val match_start: String</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val match_start_iso: String</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val match_statistics: List&lt;MatchStatistic></ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val referee_id: String</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val season_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsEntity.kt$MatchDetailsEntity$val status_code: Int</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val away_team: AwayTeam?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val home_team: HomeTeam?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val league_id: Int?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val match_events: List&lt;MatchEvent>?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val match_id: Int?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val match_start: String?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val match_start_iso: String?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val match_statistics: List&lt;MatchStatistic></ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val referee_id: Any?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val season_id: Int?</ID>
+    <ID>ConstructorParameterNaming:MatchDetailsModel.kt$MatchDetailsModel$val status_code: Int?</ID>
+    <ID>ConstructorParameterNaming:MatchEvent.kt$MatchEvent$val extra_minute: Int</ID>
+    <ID>ConstructorParameterNaming:MatchEvent.kt$MatchEvent$val own_goal: Boolean</ID>
+    <ID>ConstructorParameterNaming:MatchEvent.kt$MatchEvent$val player_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchEvent.kt$MatchEvent$val player_name: String</ID>
+    <ID>ConstructorParameterNaming:MatchEvent.kt$MatchEvent$val related_player_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchEvent.kt$MatchEvent$val related_player_name: String</ID>
+    <ID>ConstructorParameterNaming:MatchEvent.kt$MatchEvent$var team_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val ball_safe: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val dangerous_attacks: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val free_kick: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val goal_attempts: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val goal_kick: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val shots_blocked: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val shots_off_target: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val shots_on_target: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val shots_total: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val team_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val team_name: String</ID>
+    <ID>ConstructorParameterNaming:MatchStatistic.kt$MatchStatistic$val throw_in: Int</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$@PrimaryKey(autoGenerate = false) val match_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$val away_team: AwayTeam</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$val home_team: HomeTeam</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$val league_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$val match_start: String</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$val match_start_iso: String</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$val referee_id: String</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$val season_id: Int</ID>
+    <ID>ConstructorParameterNaming:MatchesEntity.kt$MatchesEntity$val status_code: Int</ID>
+    <ID>ConstructorParameterNaming:OddsModel.kt$OddsModel$val AsianHandicap: AsianHandicap</ID>
+    <ID>ConstructorParameterNaming:OddsModel.kt$OddsModel$val FullTimeResult: X2FullTimeResult</ID>
+    <ID>ConstructorParameterNaming:OddsModel.kt$OddsModel$val OverUnder: OverUnderGoalLine</ID>
+    <ID>ConstructorParameterNaming:Overall.kt$Overall$val games_played: Int</ID>
+    <ID>ConstructorParameterNaming:Overall.kt$Overall$val goals_against: Int</ID>
+    <ID>ConstructorParameterNaming:Overall.kt$Overall$val goals_diff: Int</ID>
+    <ID>ConstructorParameterNaming:Overall.kt$Overall$val goals_scored: Int</ID>
+    <ID>ConstructorParameterNaming:Player.kt$Player$val player_id: Int</ID>
+    <ID>ConstructorParameterNaming:Player.kt$Player$val player_name: String</ID>
+    <ID>ConstructorParameterNaming:Query.kt$Query$val date_from: String</ID>
+    <ID>ConstructorParameterNaming:Query.kt$Query$val season_id: String</ID>
+    <ID>ConstructorParameterNaming:Round.kt$Round$val is_current: Any</ID>
+    <ID>ConstructorParameterNaming:Round.kt$Round$val round_id: Int</ID>
+    <ID>ConstructorParameterNaming:ScorersModel.kt$ScorersModel$val league_id: Int</ID>
+    <ID>ConstructorParameterNaming:ScorersModel.kt$ScorersModel$val matches_played: Int</ID>
+    <ID>ConstructorParameterNaming:ScorersModel.kt$ScorersModel$val minutes_played: Int</ID>
+    <ID>ConstructorParameterNaming:ScorersModel.kt$ScorersModel$val season_id: Int</ID>
+    <ID>ConstructorParameterNaming:ScorersModel.kt$ScorersModel$val substituted_in: Int</ID>
+    <ID>ConstructorParameterNaming:Stage.kt$Stage$val stage_id: Int</ID>
+    <ID>ConstructorParameterNaming:Standing.kt$Standing$val team_id: Int</ID>
+    <ID>ConstructorParameterNaming:StandingsModel.kt$StandingsModel$val team_id: Int?</ID>
+    <ID>ConstructorParameterNaming:Stats.kt$Stats$val away_score: Int</ID>
+    <ID>ConstructorParameterNaming:Stats.kt$Stats$val et_score: Any</ID>
+    <ID>ConstructorParameterNaming:Stats.kt$Stats$val ft_score: String</ID>
+    <ID>ConstructorParameterNaming:Stats.kt$Stats$val home_score: Int</ID>
+    <ID>ConstructorParameterNaming:Stats.kt$Stats$val ht_score: String</ID>
+    <ID>ConstructorParameterNaming:Stats.kt$Stats$val ps_score: Any</ID>
+    <ID>ConstructorParameterNaming:Team.kt$Team$val team_id: Int</ID>
+    <ID>ConstructorParameterNaming:Team.kt$Team$val team_name: String</ID>
+    <ID>ConstructorParameterNaming:Venue.kt$Venue$val country_id: Int</ID>
+    <ID>ConstructorParameterNaming:Venue.kt$Venue$val venue_id: Int</ID>
+    <ID>EmptyTryBlock:MatchesRepositoryImpl.kt$MatchesRepositoryImpl${ }</ID>
+    <ID>FunctionNaming:StandingsListItem.kt$fun PosConverter(standings: StandingsModel): String</ID>
+    <ID>FunctionNaming:StandingsListItem.kt$fun TeamConverter(standings: StandingsModel): String</ID>
+    <ID>LongMethod:LiveMatchItem.kt$@Composable fun LiveMatchItem(match: DataModel, onItemClicked: (match: DataModel) -> Unit)</ID>
+    <ID>LongMethod:MatchDetailsScreen.kt$@OptIn(ExperimentalPagerApi::class) @Composable fun MatchDetailsScreen( matchdetailsViewModel: MatchDetailsViewModel = hiltViewModel() )</ID>
+    <ID>LongMethod:MatchesScreen.kt$@Composable fun MatchesScreen( navController: NavController, matchesViewModel: MatchesViewModel = hiltViewModel() )</ID>
+    <ID>LongMethod:ScorersScreen.kt$@Composable fun ScorersScreen(viewModel: ScorersViewModel = hiltViewModel())</ID>
+    <ID>LongMethod:StandingsListItem.kt$@Composable fun StandingsListItem(standings: StandingsModel)</ID>
+    <ID>LongMethod:StandingsScreen.kt$@Composable fun StandingScreen( viewModel: StandingsViewModel = hiltViewModel() )</ID>
+    <ID>LongMethod:TabContentDetails.kt$@Composable fun TabScreenOne(tabName: String, match: List&lt;MatchEvent>, one: Int, two: Int)</ID>
+    <ID>LongMethod:TabContentDetails.kt$@Composable fun TabScreenTwo(tabName: String, lineup: List&lt;Lineup>, one: Int, two: Int)</ID>
+    <ID>LongMethod:TopBar.kt$@Composable fun TopBar( modifier: Modifier = Modifier )</ID>
+    <ID>LongMethod:UpcomingMatchesItem.kt$@Composable fun UpcomingMatchesItem(match: DataModel, onItemClicked: (match: DataModel) -> Unit)</ID>
+    <ID>LongParameterList:MatchDetailsScreen.kt$( match: List&lt;MatchEvent>, one: Int, two: Int, lineup: List&lt;Lineup>, masa: MatchDetailsModel, matchId: String, )</ID>
+    <ID>LongParameterList:MatchDetailsScreen.kt$( pagerState: PagerState, match: List&lt;MatchEvent>, one: Int, two: Int, lineup: List&lt;Lineup>, masa: MatchDetailsModel, matchId: String, )</ID>
+    <ID>LongParameterList:TabContentDetails.kt$( statName: String, statValue: Int, statMaxValue: Int, statColor: Color, height: Dp = 15.dp, animDuration: Int = 1000, animDelay: Int = 0 )</ID>
+    <ID>MagicNumber:AppModule.kt$AppModule$15</ID>
+    <ID>MagicNumber:Color.kt$0.063f</ID>
+    <ID>MagicNumber:Color.kt$0.44f</ID>
+    <ID>MagicNumber:Color.kt$0.55f</ID>
+    <ID>MagicNumber:Color.kt$0.66f</ID>
+    <ID>MagicNumber:Color.kt$0.7f</ID>
+    <ID>MagicNumber:Color.kt$0.8f</ID>
+    <ID>MagicNumber:Color.kt$0xFF03DAC5</ID>
+    <ID>MagicNumber:Color.kt$0xFF3700B3</ID>
+    <ID>MagicNumber:Color.kt$0xFF562DA0</ID>
+    <ID>MagicNumber:Color.kt$0xFF6200EE</ID>
+    <ID>MagicNumber:Color.kt$0xFFBB86FC</ID>
+    <ID>MagicNumber:Color.kt$0xFFD50D51</ID>
+    <ID>MagicNumber:Color.kt$0xFFF5FF00</ID>
+    <ID>MagicNumber:GifLoader.kt$28</ID>
+    <ID>MagicNumber:MainScreenView.kt$0.4f</ID>
+    <ID>MagicNumber:ScorerListItem.kt$12295</ID>
+    <ID>MagicNumber:ScorerListItem.kt$12400</ID>
+    <ID>MagicNumber:ScorerListItem.kt$12401</ID>
+    <ID>MagicNumber:ScorerListItem.kt$12423</ID>
+    <ID>MagicNumber:ScorerListItem.kt$12424</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2509</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2510</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2513</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2515</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2516</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2517</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2518</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2520</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2522</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2523</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2524</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2537</ID>
+    <ID>MagicNumber:ScorerListItem.kt$2546</ID>
+    <ID>MagicNumber:ScorerListItem.kt$849</ID>
+    <ID>MagicNumber:ScorerListItem.kt$850</ID>
+    <ID>MagicNumber:StandingsListItem.kt$10</ID>
+    <ID>MagicNumber:StandingsListItem.kt$11</ID>
+    <ID>MagicNumber:StandingsListItem.kt$12</ID>
+    <ID>MagicNumber:StandingsListItem.kt$12295</ID>
+    <ID>MagicNumber:StandingsListItem.kt$12400</ID>
+    <ID>MagicNumber:StandingsListItem.kt$12401</ID>
+    <ID>MagicNumber:StandingsListItem.kt$12423</ID>
+    <ID>MagicNumber:StandingsListItem.kt$12424</ID>
+    <ID>MagicNumber:StandingsListItem.kt$13</ID>
+    <ID>MagicNumber:StandingsListItem.kt$14</ID>
+    <ID>MagicNumber:StandingsListItem.kt$15</ID>
+    <ID>MagicNumber:StandingsListItem.kt$16</ID>
+    <ID>MagicNumber:StandingsListItem.kt$17</ID>
+    <ID>MagicNumber:StandingsListItem.kt$18</ID>
+    <ID>MagicNumber:StandingsListItem.kt$19</ID>
+    <ID>MagicNumber:StandingsListItem.kt$20</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2509</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2510</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2513</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2515</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2516</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2517</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2518</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2520</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2522</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2523</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2524</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2537</ID>
+    <ID>MagicNumber:StandingsListItem.kt$2546</ID>
+    <ID>MagicNumber:StandingsListItem.kt$3</ID>
+    <ID>MagicNumber:StandingsListItem.kt$4</ID>
+    <ID>MagicNumber:StandingsListItem.kt$5</ID>
+    <ID>MagicNumber:StandingsListItem.kt$6</ID>
+    <ID>MagicNumber:StandingsListItem.kt$7</ID>
+    <ID>MagicNumber:StandingsListItem.kt$8</ID>
+    <ID>MagicNumber:StandingsListItem.kt$849</ID>
+    <ID>MagicNumber:StandingsListItem.kt$850</ID>
+    <ID>MagicNumber:StandingsListItem.kt$9</ID>
+    <ID>MagicNumber:TabContentDetails.kt$0xFF505050</ID>
+    <ID>MaxLineLength:AllUseCasesTest.kt$AllUseCasesTest$assert(matchesdetailsresult is Resource.Success &amp;&amp; (matchesdetailsresult.data ?: false) != emptyList&lt;MatchDetailsModel>())</ID>
+    <ID>MaxLineLength:DtoToEntity.kt$away_team</ID>
+    <ID>MaxLineLength:DtoToEntity.kt$return ScorersModel(goals, league_id, matches_played, minutes_played, penalties, player, pos, season_id, substituted_in, team)</ID>
+    <ID>MaxLineLength:EntityToDomain.kt$away_team</ID>
+    <ID>PackageNaming:GetMatchDetailsUseCase.kt$package com.example.livescore.domain.use_cases</ID>
+    <ID>PackageNaming:GetMatchesUseCase.kt$package com.example.livescore.domain.use_cases</ID>
+    <ID>PackageNaming:GetOddsUseCase.kt$package com.example.livescore.domain.use_cases</ID>
+    <ID>PackageNaming:GetScorersUseCase.kt$package com.example.livescore.domain.use_cases</ID>
+    <ID>PackageNaming:GetStandingsUseCase.kt$package com.example.livescore.domain.use_cases</ID>
+    <ID>SwallowedException:MatchesRepositoryImpl.kt$MatchesRepositoryImpl$catch (exception: IOException) { emit( Resource.Error( message = "Connection Lost" ) ) }</ID>
+    <ID>SwallowedException:MatchesRepositoryImpl.kt$MatchesRepositoryImpl$catch (exception: IOException) { emit( Resource.Error( message = "Connection Lost", data = getMatchesFromDb ) ) }</ID>
+    <ID>TooManyFunctions:Converters.kt$Converters</ID>
+    <ID>TooManyFunctions:TabContentDetails.kt$com.example.livescore.presentation.screens.matchdetails.components.TabContentDetails.kt</ID>
+    <ID>UnusedPrivateMember:MatchDetailsScreen.kt$matchId: String</ID>
+    <ID>UnusedPrivateMember:MatchDetailsScreen.kt$val context = LocalContext.current</ID>
+    <ID>UnusedPrivateMember:MatchDetailsViewModel.kt$MatchDetailsViewModel$private fun getOdds(id: String)</ID>
+    <ID>UnusedPrivateMember:MatchesRepositoryImpl.kt$MatchesRepositoryImpl$private val matchDetailsDao: MatchDetailsDao</ID>
+    <ID>UnusedPrivateMember:MatchesRepositoryImpl.kt$MatchesRepositoryImpl$val apiResponse = livescoreApi.getMatchDetails(id)</ID>
+    <ID>UnusedPrivateMember:MatchesRepositoryImpl.kt$MatchesRepositoryImpl$val apiResponse = livescoreApi.getMatches()</ID>
+    <ID>UnusedPrivateMember:TabContentDetails.kt$statName: String</ID>
+    <ID>UnusedPrivateMember:TabContentDetails.kt$tabName: String</ID>
+    <ID>WildcardImport:Converters.kt$import com.example.livescore.data.remote.dto.*</ID>
+    <ID>WildcardImport:Converters.kt$import com.example.livescore.data.remote.dto.matches.*</ID>
+    <ID>WildcardImport:DataModel.kt$import com.example.livescore.data.remote.dto.*</ID>
+    <ID>WildcardImport:DataModel.kt$import com.example.livescore.data.remote.dto.matches.*</ID>
+    <ID>WildcardImport:DtoToEntity.kt$import com.example.livescore.domain.models.*</ID>
+    <ID>WildcardImport:LiveMatchItem.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:MainScreenView.kt$import androidx.compose.material.*</ID>
+    <ID>WildcardImport:MatchDetailsEntity.kt$import com.example.livescore.data.remote.dto.matchdetails.*</ID>
+    <ID>WildcardImport:MatchDetailsModel.kt$import com.example.livescore.data.remote.dto.matchdetails.*</ID>
+    <ID>WildcardImport:MatchDetailsScreen.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:MatchDetailsScreen.kt$import androidx.compose.material.*</ID>
+    <ID>WildcardImport:MatchDetailsScreen.kt$import com.google.accompanist.pager.*</ID>
+    <ID>WildcardImport:MatchesEntity.kt$import com.example.livescore.data.remote.dto.*</ID>
+    <ID>WildcardImport:MatchesEntity.kt$import com.example.livescore.data.remote.dto.matches.*</ID>
+    <ID>WildcardImport:MatchesRepository.kt$import com.example.livescore.domain.models.*</ID>
+    <ID>WildcardImport:MatchesRepositoryImpl.kt$import com.example.livescore.domain.models.*</ID>
+    <ID>WildcardImport:MatchesScreen.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:MatchesScreen.kt$import androidx.compose.material.*</ID>
+    <ID>WildcardImport:ScorerListItem.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:ScorersScreen.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:StandingsListItem.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:StandingsScreen.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:TabContentDetails.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:TabContentDetails.kt$import androidx.compose.material.icons.filled.*</ID>
+    <ID>WildcardImport:TabContentDetails.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:TopBar.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:UpcomingMatchesItem.kt$import androidx.compose.foundation.layout.*</ID>
+  </CurrentIssues>
+</SmellBaseline>
