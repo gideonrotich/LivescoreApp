@@ -8,6 +8,7 @@ plugins {
     id "io.gitlab.arturbosch.detekt"
     id "com.diffplug.spotless"
     id 'jacoco'
+    id 'org.jetbrains.dokka'
 }
 
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
