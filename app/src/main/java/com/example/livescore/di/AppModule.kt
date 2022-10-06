@@ -1,7 +1,12 @@
 package com.example.livescore.di
 
 import android.content.Context
+import android.preference.PreferenceManager
 import androidx.room.Room
+import com.chuckerteam.chucker.api.Chucker
+import com.chuckerteam.chucker.api.ChuckerCollector
+import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.chuckerteam.chucker.api.RetentionManager
 import com.example.livescore.data.local.converters.Converters
 import com.example.livescore.data.local.db.LivescoreDatabase
 import com.example.livescore.data.remote.api.LivescoreApi
@@ -20,6 +25,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
+import kotlin.coroutines.coroutineContext
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -66,6 +72,8 @@ object AppModule {
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
+
+
 
     @Provides
     @Singleton

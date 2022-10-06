@@ -37,7 +37,6 @@ plugins {
 apply plugin: "io.gitlab.arturbosch.detekt"
 apply from: "$project.rootDir/spotless.gradle"
 
-
 detekt {
     toolVersion = "1.18.1"
     input = files("src/main/java")
@@ -52,7 +51,6 @@ detekt {
         }
     }
 }
-
 
 //task clean(type: Delete) {
 //    delete rootProject.buildDir
