@@ -1,0 +1,51 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "KtlintFormat"
+  lane :ktlintFormat do
+    gradle(task: "KtlintFormat")
+  end
+
+  desc "KtlintCheck"
+  lane :ktlintCheck do
+     gradle(task: "ktlintCheck")
+  end
+
+  desc "detekt"
+    lane :detekt do
+       gradle(task: "detekt")
+  end
+
+  desc "spotlessCheck"
+    lane :spotlessCheck do
+        gradle(task: "spotlessCheck")
+  end
+
+  desc "spotlessApply"
+    lane :spotlessApply do
+        gradle(task: "spotlessApply")
+  end
+
+  desc "jacocoTestReport"
+    lane :jacocoTestReport do
+         gradle(task: "jacocoTestReport")
+  end
+end
+
+
+
