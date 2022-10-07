@@ -1,19 +1,16 @@
 # Livescore
-This allows us to easily define specifications in a clear, understandable, human-readable way. This framework allows you to describe tests and expected behaviors in a more readable way.
+A simple Livescore App consuming the Sports Api
 
-To run tests in Android Studio you need to install Spek Framework plugin (search for Spek Framework).
-
-The UI test run normally, either on a device or an emulator, without any special plugin or dependency.
-
+Built using jetpack compose
 
 ### How it's built
 
 * Technologies used
     * [Kotlin](https://kotlinlang.org/)
-    * [Compose](https://developer.android.com/jetpack/compose) Because **COMPOSE IS FINALLY STABLE**
+    * [Compose](https://developer.android.com/jetpack/compose)
     * [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
     * [Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)
-    * [KOIN](https://insert-koin.io/)
+    * [Hilt](https://insert-koin.io/)
     * [Retrofit](https://square.github.io/retrofit/)
     * [Chucker](https://github.com/ChuckerTeam/chucker)
     * [Jetpack](https://developer.android.com/jetpack)
@@ -47,8 +44,8 @@ The UI test run normally, either on a device or an emulator, without any special
 
 ### Screenshots
 
-I added some screenshots in the `screenshots` folder, in the root directory of the project. Added some GIFs to also show end to end test on the app
+I added some screenshots in the `screenshots` folder, in the root directory of the project.
 
-Light | Dark | GIF
+Light | Dark |
 --- | --- | ---
-<img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_light.png" width="280"/> | <img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_dark.png" width="280"/> | <img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather.gif" width="280"/>
+<img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_light.png" width="280"/> | <img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_dark.png" width="280"/> | <img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_dark.png" width="280"/> | <img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_dark.png" width="280"/>
