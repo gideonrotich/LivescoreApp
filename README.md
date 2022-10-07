@@ -1,4 +1,4 @@
-# Livescore
+# Livescore⚽
 <h2>A simple Livescore App consuming the Sports Api</>
 
 Built using jetpack compose
@@ -46,4 +46,4 @@ Built using jetpack compose
 
 I added some screenshots in the `screenshots` folder, in the root directory of the project.
 
-<img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_light.png" width="280"/> | <img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_dark.png" width="280"/> | <img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_dark.png" width="280"/> | <img src="https://github.com/jumaallan/apollo-agriculture/blob/master/screenshots/weather_dark.png" width="280"/>
+<img src="https://github.com/gideonrotich/Livescore/blob/master/screenshots/one.png" width="280"/>  <img src="https://github.com/gideonrotich/Livescore/blob/master/screenshots/two.png" width="280"/>  <img src="https://github.com/gideonrotich/Livescore/blob/master/screenshots/three.png" width="280"/>  <img src="https://github.com/gideonrotich/Livescore/blob/master/screenshots/four.png" width="280"/>  <img src="https://github.com/gideonrotich/Livescore/blob/master/screenshots/five.png" width="280"/>  <img src="https://github.com/gideonrotich/Livescore/blob/master/screenshots/six.png" width="280"/>
