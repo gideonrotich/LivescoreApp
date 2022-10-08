@@ -31,7 +31,7 @@ fun UpcomingMatchesItem(match: DataModel, onItemClicked: (match: DataModel) -> U
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(20.dp)
+            .padding(start = 20.dp, end = 20.dp, top = 5.dp, bottom = 5.dp)
             .clickable { onItemClicked(match) },
         shape = RoundedCornerShape(10.dp),
         elevation = 5.dp,
@@ -69,7 +69,7 @@ fun UpcomingMatchesItem(match: DataModel, onItemClicked: (match: DataModel) -> U
                 Spacer(modifier = Modifier.width(10.dp))
                 val month = getMatchDayAndMonth(match.match_start!!)
                 val time = getMatchTime(match.match_start)
-                Column() {
+                Column {
                     Text(
                         text = "$time",
                         style = MaterialTheme.typography.body1,
