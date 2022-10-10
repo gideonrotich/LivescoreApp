@@ -45,6 +45,10 @@ platform :android do
     lane :jacocoTestReport do
          gradle(task: "jacocoTestReport")
   end
+  desc "dokkaHtml"
+    lane :dokkaHtml do
+         gradle(task: "dokkaHtml")
+  end
 end
 
 
