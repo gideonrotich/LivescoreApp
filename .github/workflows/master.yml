@@ -55,5 +55,16 @@ jobs:
         with:
           ruby-version: '2.6'
 
+      - name: install dependencies
+        run: gem install bundler && bundle install
+
+      - name: fastlane detekt
+        uses: maierj/fastlane-action@v1.4.0
+        with:
+          lane: develop
+          skip-tracking: false
+          subdirectory: fastlane
+          bundle-install-path: CACHE_BUNDLER
+
 
 
