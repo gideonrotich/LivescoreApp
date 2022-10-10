@@ -61,7 +61,7 @@ jobs:
       - name: fastlane detekt
         uses: maierj/fastlane-action@v1.4.0
         with:
-          lane: develop
+          lane: detekt
           skip-tracking: false
           subdirectory: fastlane
           bundle-install-path: CACHE_BUNDLER
