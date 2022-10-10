@@ -58,10 +58,10 @@ jobs:
       - name: install dependencies
         run: gem install bundler && bundle install
 
-      - name: fastlane ktlint
+      - name: fastlane spotless
         uses: maierj/fastlane-action@v1.4.0
         with:
-          lane: ktlintFormat
+          lane: spotlessApply
           skip-tracking: false
           subdirectory: fastlane
           bundle-install-path: CACHE_BUNDLER
