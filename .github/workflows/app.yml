@@ -25,12 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: set up JDK 11
+    - name: set up JDK 11
           uses: actions/setup-java@v1
           with:
             java-version: 11
 
-     - name: Cache gradle
+    - name: Cache gradle
                 uses: actions/cache@v1
                 with:
                   path: ~/.gradle/caches
@@ -38,7 +38,7 @@ jobs:
                   restore-keys: |
                     ${{ runner.os }}-gradle-
 
-     - name: Bundler cache
+    - name: Bundler cache
                 uses: actions/cache@v1
                 with:
                   path: $CACHE_BUNDLER
@@ -46,15 +46,15 @@ jobs:
                   restore-keys: |
                     ${{ runner.os }}-gems-
 
-     - name: setup ruby
+    - name: setup ruby
                 uses: actions/setup-ruby@v1
                 with:
                   ruby-version: '2.6'
 
-     - name: install dependencies
+    - name: install dependencies
                 run: gem install bundler && bundle install
 
-     - name: fastlane format
+    - name: fastlane format
                 uses: maierj/fastlane-action@v1.4.0
                 with:
                   lane: ktlintFormat
@@ -62,7 +62,7 @@ jobs:
                   subdirectory: fastlane
                   bundle-install-path: CACHE_BUNDLER
 
-     - name: fastlane detekt
+    - name: fastlane detekt
                 uses: maierj/fastlane-action@v1.4.0
                 with:
                   lane: detekt
