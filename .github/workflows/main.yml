@@ -23,12 +23,6 @@ jobs:
         with:
           java-version: 11
 
-      - name: Build with Gradle
-        run: ./gradlew build
-
-      - name: Run Tests
-        run: ./gradlew test
-
       - name: Upload a Build Artifact (APK)
         uses: actions/upload-artifact@v2.2.4
         with:
