@@ -1,5 +1,5 @@
 # Livescore⚽
-<h2>A simple Livescore App consuming the Sports Api</>
+<h2>A Livescore App consuming the Sports Api</>
 
 Built using jetpack compose
 
