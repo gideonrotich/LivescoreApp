@@ -14,7 +14,7 @@ import com.google.gson.reflect.TypeToken
 @ProvidedTypeConverter
 class Converters(
     private val gson: Gson
-) {
+){
 
     // Away team converter
     @TypeConverter
